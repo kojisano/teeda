@@ -43,10 +43,73 @@
 			<item name="Downloads" href="downloads.html" />
 		</menu>
 
-		<menu name="Documentation"></menu>
+		<menu name="Teeda Extension">
+			<item name="概要" href="extension/index.html" />
+<!--
+			<item name="ファーストステップ" href="extension/firststep/index.html" />
+			<item name="チュートリアル" href="extension/tutorial/index.html" />
+			<item name="サンプル解説" href="extension/example.html" />
+-->
+			<item name="Concept" href="extension/concept/index.html" collapse="true">
+				<item name="Page model" href="extension/concept/page.html" />
+				<item name="PRG Pattern" href="extension/concept/prg.html" />
+				<item name="Lifecycle" href="extension/concept/lifecycle.html" />
+				<!--
+					<item name="バインディング" href="extension/concept/binding.html" />
+				-->
+				<item name="State and Scope" href="extension/concept/scope.html" />
+				<item name="Layout" href="extension/concept/layout.html" />
+			</item>
+
+			<item name="Reverse Reference" href="extension/reverse/index.html"
+				collapse="true">
+				<item name="Output" href="extension/reverse/output.html" />
+				<item name="Link" href="extension/reverse/link.html" />
+				<item name="Input Form" href="extension/reverse/input.html" />
+				<item name="Downlaod" href="extension/reverse/download.html" />
+				<item name="Validation" href="extension/reverse/validation.html" />
+				<item name="Convert" href="extension/reverse/convert.html" />
+				<item name="For Each" href="extension/reverse/foreach.html" />
+				<item name="Condition" href="extension/reverse/condition.html" />
+				<item name="Layout" href="extension/reverse/layout.html" />
+				<item name="Transition and State" href="extension/reverse/transition.html" />
+				<item name="Preview" href="extension/reverse/preview.html" />
+			</item>
+
+			<item name="Reference" href="extension/reference/index.html"
+				collapse="true">
+				<item name="機能リファレンス" href="extension_features.html" />
+				<item name="コンポーネント一覧" href="extension_component_reference.html" />
+				<item name="カスタマイズについて" href="extension_customize.html" />
+				<item name="テンプレートXHTML" href="extension/reference/xhtml.html" />
+				<item name="リソース" href="extension/reference/resource.html" />
+				<item name="ディレクトリ構成" href="extension/reference/directory.html" />
+
+				<!--
+					<item name="機能" href="extension/reference/features.html" /> <item
+					name="コンポーネント" href="extension/reference/component.html" /> <item
+					name="設定ファイル" href="extension/reference/config.html" /> <item
+					name="規約" href="extension/reference/convention.html" /> <item
+					name="アノテーション" href="extension/reference/annotation.html" /> <item
+					name="dicon" href="extension/reference/dicon.html" /> <item
+					name="カスタマイズ" href="extension/reference/customize.html" />
+				-->
+			</item>
+		</menu>
+
+		<menu name="Teeda Ajax">
+			<item name="概要" href="teeda_ajax.html" />
+			<item name="Kumu" href="kumu.html" collapse="true">
+				<item name="event" href="ajax/kumu/event.html" />
+				<item name="event" href="ajax/kumu/ajax.html" />
+				<item name="event" href="ajax/kumu/disabled.html" />
+				<item name="event" href="ajax/kumu/validate.html" />
+			</item>
+		</menu>
 
 		<menu ref="reports" />
-		<menu name="Modules">
+		<menu name="Modules" />
+<!--
 			<item name="Teeda" href="index.html" />
 			<item name="Teeda Core" href="../teeda-core/en/index.html" />
 			<item name="Teeda Extension"
@@ -55,5 +118,6 @@
 			<item name="Teeda Tiger"
 				href="../teeda-tiger/en/index.html" />
 		</menu>
+-->
 	</body>
 </project>

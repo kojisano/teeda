@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document
+	PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Extension - 逆引きリファレンス - 条件制御</title>
+	</properties>
+	<body>
+		<section name="条件制御">
+			<ul>
+				<li>
+					<a href="#条件が成立した場合だけ要素を出力するには">
+						条件が成立した場合だけ要素を出力するには
+					</a>
+				</li>
+				<li>
+					<a href="#条件が成立しなかった場合だけ要素を出力するには">
+						条件が成立しなかった場合だけ要素を出力するには
+					</a>
+				</li>
+				<li>
+					<a href="#バリデーションでエラーになった場合も条件を評価するには">
+						バリデーションでエラーになった場合も条件を評価するには
+					</a>
+				</li>
+			</ul>
+
+			<subsection name="条件が成立した場合だけ要素を出力するには">
+				<div class="sidebar">
+					他の機能に割り当てられている要素と併用することはできません．
+					そのような場合は他の機能に割り当てられている要素の外側に
+					<code>&lt;span&gt;</code>
+					要素や
+					<code>&lt;div&gt;</code>
+					要素を記述し， その
+					<code>id</code>
+					属性を
+					<code>is～</code>
+					にします．
+				</div>
+				<p>
+					任意の要素に
+					<code>id</code>
+					属性を付け，
+					<code>is</code>
+					で始まる値とします．
+				</p>
+				<p>
+					ページクラスに，要素の
+					<code>id</code>
+					属性から先頭の
+					<code>is</code>
+					を除いた名前で， 型が
+					<code>boolean</code>
+					のプロパティを用意します．
+					<br clear="all" />
+				</p>
+				<p style="clear: both">&#160;</p>
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					レンダリング時， プロパティが
+					<code>true</code>
+					の場合のみ要素の開始タグ及び終了タグとその内容が出力されます．
+					<a href="output.html#タグを出力したくない場合には">
+						タグを出力したくない場合
+					</a>
+					には
+					<code>te:omittag</code>
+					属性に
+					<code>true</code>
+					を設定します．
+				</p>
+				<p>
+					プロパティが
+					<code>false</code>
+					の場合，要素 (開始タグ及び終了タグと内容) は出力されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+aaa<span id="isDisplay">bbb</span>ccc
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public boolean display;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>display</code>
+					プロパティが
+					<code>true</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+aaa<span id="isDisplay">bbb</span>ccc
+]]></source>
+				<p>
+					<code>display</code>
+					プロパティが
+					<code>false</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+aaaccc
+]]></source>
+			</subsection>
+
+			<subsection name="条件が成立しなかった場合だけ要素を出力するには">
+				<div class="sidebar">
+					他の機能に割り当てられている要素と併用することはできません．
+					そのような場合は他の機能に割り当てられている要素の外側に
+					<code>&lt;span&gt;</code>
+					要素や
+					<code>&lt;div&gt;</code>
+					要素を記述し， その
+					<code>id</code>
+					属性を
+					<code>isNot～</code>
+					にします．
+				</div>
+				<p>
+					任意の要素に
+					<code>id</code>
+					属性を付け，
+					<code>isNot</code>
+					で始まる値とします．
+				</p>
+				<p>
+					ページクラスに，要素の
+					<code>id</code>
+					属性から先頭の
+					<code>isNot</code>
+					を除いた名前で， 型が
+					<code>boolean</code>
+					のプロパティを用意します．
+					<br clear="all" />
+				</p>
+				<p style="clear: both">&#160;</p>
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					レンダリング時， プロパティが
+					<code>false</code>
+					の場合のみ要素の開始タグ及び終了タグとその内容が出力されます．
+					<a href="output.html#タグを出力したくない場合には">
+						タグを出力したくない場合
+					</a>
+					には
+					<code>te:omittag</code>
+					属性に
+					<code>true</code>
+					を設定します．
+				</p>
+				<p>
+					プロパティが
+					<code>true</code>
+					の場合，要素 (開始タグ及び終了タグと内容) は出力されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+aaa<span id="isNotHide">bbb</span>ccc
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public boolean hide;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>hide</code>
+					プロパティが
+					<code>false</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+aaa<span id="isNotHide">bbb</span>ccc
+]]></source>
+				<p>
+					<code>hide</code>
+					プロパティが
+					<code>true</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+aaaccc
+]]></source>
+			</subsection>
+
+			<subsection name="バリデーションでエラーになった場合も条件を評価するには">
+				<p>
+					ポストバックでバリデーションでエラーになった場合は元の画面の状態を維持するため，
+					ページクラスの条件プロパティは評価されません．
+				</p>
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					バリデーションでエラーになった場合でも条件プロパティを評価するには，
+					<code>id</code>
+					属性に
+					<code>is～</code>
+					または
+					<code>isNot～</code>
+					を指定した要素に
+					<code>te:refresh</code>
+					属性を指定します．
+					属性の値は
+					<code>true</code>
+					を指定します．
+					<br clear="all" />
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+aaa<span id="isDisplay" te:refresh="true">bbb</span>ccc
+]]></source>
+				<p>
+					バリデーションでエラーになった場合でも，表示の度に
+					<code>display</code>
+					プロパティが評価されます．
+				</p>
+			</subsection>
+		</section>
+	</body>
+</document>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document
+	PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Extension - Teeda Extension チュートリアル</title>
+	</properties>
+	<body>
+		<section name="Teeda Extension チュートリアル">
+			<p>現在作成中です</p>
+			<subsection name="コンテンツ">
+				<ul>
+					<li>
+						<a href="introduction.html">はじめに</a>
+					</li>
+					<li>
+						<a href="setup.html">環境のセットアップ</a>
+					</li>
+					<li>
+						<a href="helloworld.html">最初の1歩 - Hello World -</a>
+					</li>
+				</ul>
+			</subsection>
+			<subsection name="下書き">
+				<ul>
+					<!-- 
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080128/1201507951"> チュートリアルの作成思案1</a>
+					</li>
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080129/1201600484"> Teedaチュートリアル1 (概要)</a>
+					</li>
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080130/1201648959"> Teedaチュートリアル2 (セットアップ)</a>
+					</li>
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080205/1202204733"> Teedaチュートリアル3 (Hello World)</a>
+					</li>
+					 -->
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080212/1202812765"> Teedaチュートリアル4-1 (入力)</a>
+					</li>
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080218/1203329702"> Teedaチュートリアル4-2 (画面遷移)</a>
+					</li>
+					<li>
+						<a href="http://d.hatena.ne.jp/shot6/20080229/1204279120"> Teedaチュートリアル4-3 (状態の引き継ぎ)</a>
+					</li>
+				</ul>
+			</subsection>
+			<subsection name="ネタ元">
+				<ul>
+					<li>
+						<a href="http://www.seasar.org/wiki/index.php?Teeda%2FgettingStarted"> Getting Started</a>
+					</li>
+				</ul>
+			</subsection>
+
+			<subsection name="書籍">
+				<p>
+					Teeda ExtensionをStep byStepで理解することができる，入門に最適な解説書です．
+				</p>
+				<div style="width: 100px; height: 80px; float: left;">
+					<a href="http://www.amazon.co.jp/dp/4774134368/">
+						<img
+							src="http://ecx.images-amazon.com/images/I/51PeOTOUYqL._SL500_SS75_.jpg"
+							alt="Seasar2によるスーパーアジャイルなWeb開発" />
+					</a>
+				</div>
+				<dl>
+					<dt style="font-size: large;">
+						<a
+							href="http://www.amazon.co.jp/dp/4774134368/">
+							<strong>Seasar2によるスーパーアジャイルなWeb開発</strong>
+						</a>
+					</dt>
+					<dd>
+						<ul>
+							<li>ひがやすを著</li>
+							<li>技術評論社</li>
+						</ul>
+					</dd>
+				</dl>
+			</subsection>
+		</section>
+	</body>
+</document>

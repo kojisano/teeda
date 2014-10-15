@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document
+	PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Extension - 逆引きリファレンス - リンク</title>
+	</properties>
+	<body>
+		<section name="リンク">
+			<ul>
+				<li>
+					<a href="#動的なリンクを使うには">動的なリンクを使うには</a>
+				</li>
+				<li>
+					<a href="#リンクのパラメータを動的に変えるには">リンクのパラメータを動的に変えるには</a>
+				</li>
+				<li>
+					<a href="#プロパティファイルの内容をリンクの文字列にするには">
+						プロパティファイルの内容をリンクの文字列にするには
+					</a>
+				</li>
+				<li>
+					<a href="#新しいウィンドウを開くには">新しいウィンドウを開くには</a>
+				</li>
+			</ul>
+
+			<p>次のような場合はリンクを動的に作成する必要があります．</p>
+			<ul>
+				<li>
+					クッキーを無効にしているブラウザでもセッションを有効にするためリンクにセッションIDを埋め込む場合．
+				</li>
+				<li>リクエストパラメータを動的に変更する場合．</li>
+			</ul>
+			<p>
+				上記に該当しない場合 (外部サイトへの静的なリンク) は， テンプレートHTMLに通常の (静的な)
+				リンクを記述するだけで十分です．
+			</p>
+			<p>
+				静的なリンクは，
+				<code>&lt;a&gt;</code>
+				要素に
+				<code>id</code>
+				属性を付けないか，
+				<code>go</code>
+				で始まらない値を指定します．
+			</p>
+
+			<subsection name="動的なリンクを使うには">
+				<div class="sidebar">
+					<code>id</code>
+					属性は
+					<code>go</code>
+					で始まっていればその後ろは何でもかまいません (Teedaは参照しません)．
+				</div>
+				<p>
+					<code>&lt;a&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付けて
+					<code>go</code>
+					で始まる値を指定し，
+					<code>href</code>
+					属性で遷移先のURLを指定します．
+				</p>
+				<p>
+					実行時， クッキーが無効のブラウザに対しては
+					<code>href</code>
+					属性にURLリライティングでセッションIDが埋め込まれます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<a id="goNext" href="next.html">次ページへ</a>
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>クッキーが有効なブラウザからアクセスされた場合， レンダリング結果は次のようになります．</p>
+				<source><![CDATA[
+<a id="goNext" href="next.html>次ページへ</a>
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>クッキーが無効なブラウザからアクセスされた場合， レンダリング結果は次のようになります．</p>
+				<source><![CDATA[
+<a id="goNext" href="next.html;jsessionid=DCFD14BF14B9F71050A3FC36E8D465EF">次ページへ</a>
+]]></source>
+			</subsection>
+
+			<subsection name="リンクのパラメータを動的に変えるには">
+				<p>
+					<code>href</code>
+					属性にパラメータを含むURLを指定し，
+					動的に値を変えたいパラメータ名と同じ名前のプロパティをページクラスに用意します． レンダリング時，
+					<code>href</code>
+					属性のパラメータ値は， 同じ名前のプロパティ値に置き換えられます．
+				</p>
+				<p>
+					パラメータと同じ名前のプロパティがページクラスにない場合は，
+					<code>href</code>
+					属性の値がそのままレンダリングされます．
+				</p>
+				<p>
+					パラメータと同じ名前のプロパティがある場合でも， パラメータ値をプロパティ値に置き換えたくない場合は，
+					パラメータ名に接頭辞
+					<code>fixed_</code>
+					を付加します． レンダリング時，
+					<code>fixed_</code>
+					は取り除かれ， パラメータ値はテンプレートHTMLの
+					<code>href</code>
+					属性の値がそのままレンダリングされます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<a id="goNext" href="next.html?foo=xxx&amp;bar=yyy&amp;fixed_baz=zzz">次ページへ</a>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String foo = "aaa";
+public String baz = "ccc";
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>レンダリング結果は次のようになります．</p>
+				<source><![CDATA[
+<a id="goNext" href="next.html?foo=aaa&amp;bar=yyy&amp;baz=zzz">次ページへ</a>
+]]></source>
+				<p>
+					パラメータ
+					<code>foo</code>
+					の値は対応するプロパティの値に置き換えられます． パラメータ
+					<code>bar</code>
+					には対応するプロパティがないため， テンプレートの値がそのままレンダリングされます． パラメータ
+					<code>fixed_baz</code>
+					は接頭辞
+					<code>fixed_</code>
+					が取り除かれ， テンプレートの値がそのままレンダリングされます．
+				</p>
+			</subsection>
+
+			<subsection name="プロパティファイルの内容をリンクの文字列にするには">
+				<div class="sidebar">
+					<code>&lt;a&gt;</code>
+					要素の
+					<code>title</code>
+					属性にプロパティファイルの内容を出力する場合は「
+					<a href="output.html#プロパティファイルの内容を属性に出力するには">
+						プロパティファイルの内容を属性に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;a&gt;</code>
+					要素の内容に
+					<code>&lt;span&gt;</code>
+					要素を記述して，
+					<code>id</code>
+					属性の値を
+					<var>key</var>
+					+
+					<code>Label</code>
+					とします．
+					<a href="../reference/resource.html#ラベルリソース">
+						ラベルリソース
+					</a>
+					ファイルに
+					<var>pagename.key</var>
+					または
+					<var>key</var>
+					という名前のプロパティを定義します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;span&gt;</code>
+					要素の内容は
+					<a href="../reference/resource.html#ラベルリソース">
+						ラベルリソース
+					</a>
+					ファイルの値に置き換えられます．
+				</p>
+				<div style="clear: both;" />
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<a id="goNext" href="next.html"><span id="linkLabel">dummy</a></span>
+]]></source>
+				<h5>例：ラベルリソースファイル (label_ja.properties)</h5>
+				<source><![CDATA[
+foo.link=次ページへ
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>レンダリング結果は次のようになります．</p>
+				<source><![CDATA[
+<a id="goNext" href="next.html"><span id="linkLabel">次ページへ</span></a>
+]]></source>
+				<h4>関連項目</h4>
+				<ul>
+					<li>
+						<a href="output.html#タグを出力したくない場合には">
+							タグを出力したくない場合には
+						</a>
+					</li>
+				</ul>
+			</subsection>
+
+			<subsection name="新しいウィンドウを開くには">
+				<p>
+					<code>&lt;a&gt;</code>
+					要素の
+					<code>href</code>
+					属性で指定するURLに
+					<code>newwindow=true</code>
+					というパラメータを含めます．
+				</p>
+				<p>
+					このパラメータを指定することにより， 新しいウィンドウ用の
+					<a href="../concept/scope.html#スコープ">スコープ</a>
+					が作成され， 元のウィンドウと状態が混在することを回避することができます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<a target="_blank" href="next.html?newwindow=true">新しいウィンドウで次ページへ</a>
+]]></source>
+			</subsection>
+		</section>
+	</body>
+</document>

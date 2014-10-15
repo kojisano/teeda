@@ -1,0 +1,3054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document
+	PUBLIC "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Extension - 逆引きリファレンス - 入力フォーム</title>
+	</properties>
+	<body>
+		<section name="入力フォーム">
+			<ul>
+				<li>
+					<a href="#フォーム">フォーム</a>
+					<ul>
+						<li>
+							<a href="#ポストバック用のフォームを使うには">
+								ポストバック用のフォームを使うには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#テキストフィールド">テキストフィールド</a>
+					<ul>
+						<li>
+							<a href="#テキストフィールドを使うには">テキストフィールドを使うには</a>
+						</li>
+						<li>
+							<a href="#数値の入力を支援するには">数値の入力を支援するには</a>
+						</li>
+						<li>
+							<a href="#日付の入力を支援するには">日付の入力を支援するには</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#パスワードフィールド">パスワードフィールド</a>
+					<ul>
+						<li>
+							<a href="#パスワードフィールドを使うには">
+								パスワードフィールドを使うには
+							</a>
+						</li>
+						<li>
+							<a href="#パスワードフィールドに初期値を表示するには">
+								パスワードフィールドに初期値を表示するには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#テキストエリア">テキストエリア</a>
+					<ul>
+						<li>
+							<a href="#テキストエリアを使うには">テキストエリアを使うには</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#ラジオボタン_静的">ラジオボタン (静的)</a>
+					<ul>
+						<li>
+							<a href="#静的なラジオボタンを使うには">静的なラジオボタンを使うには</a>
+						</li>
+						<li>
+							<a href="#静的なラジオボタンをチェックされた状態で表示するには">
+								静的なラジオボタンをチェックされた状態で表示するには
+							</a>
+						</li>
+						<li>
+							<a href="#静的なラジオボタンの値を動的に変えるには">
+								静的なラジオボタンの値を動的に変えるには
+							</a>
+						</li>
+						<li>
+							<a href="#静的なラジオボタンの数を動的に変えるには">
+								静的なラジオボタンの数を動的に変えるには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#ラジオボタン_動的">ラジオボタン (動的)</a>
+					<ul>
+						<li>
+							<a href="#動的なラジオボタンを使うには">動的なラジオボタンを使うには</a>
+						</li>
+						<li>
+							<a href="#動的なラジオボタンで1行に描画される数を指定するには">
+								動的なラジオボタンで1行に描画される数を指定するには
+							</a>
+						</li>
+						<li>
+							<a href="#動的なラジオボタンを縦に並べるには">
+								動的なラジオボタンを縦に並べるには
+							</a>
+						</li>
+						<li>
+							<a href="#動的なラジオボタンでテーブルを使わずに描画するには">
+								動的なラジオボタンでテーブルを使わずに描画するには
+							</a>
+						</li>
+						<li>
+							<a href="#動的なラジオボタンで選択されたラベルをポストバック時に受け取るには">
+								動的なラジオボタンで選択されたラベルをポストバック時に受け取るには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#チェックボックス_単一項目">チェックボックス (単一項目)</a>
+					<ul>
+						<li>
+							<a href="#単一項目のチェックボックスを使うには">
+								単一項目のチェックボックスを使うには
+							</a>
+						</li>
+						<li>
+							<a href="#単一項目のチェックボックスをチェックされた状態で表示するには">
+								単一項目のチェックボックスをチェックされた状態で表示するには
+							</a>
+						</li>
+						<li>
+							<a href="#単一項目のチェックボックスを複数使うには">
+								単一項目のチェックボックスを複数使うには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#チェックボックス_複数項目">チェックボックス (複数項目)</a>
+					<ul>
+						<li>
+							<a href="#複数項目のチェックボックスを使うには">
+								複数項目のチェックボックスを使うには
+							</a>
+						</li>
+						<li>
+							<a href="#複数項目のチェックボックスで項目がチェックされた状態で表示するには">
+								複数項目のチェックボックスで項目がチェックされた状態で表示するには
+							</a>
+						</li>
+						<li>
+							<a href="#複数項目のチェックボックスで1行に描画される数を指定するには">
+								複数項目のチェックボックスで1行に描画される数を指定するには
+							</a>
+						</li>
+						<li>
+							<a href="#複数項目のチェックボックスを縦に並べるには">
+								複数項目のチェックボックスを縦に並べるには
+							</a>
+						</li>
+						<li>
+							<a href="#複数項目のチェックボックスでテーブルを使わずに描画するには">
+								複数項目のチェックボックスでテーブルを使わずに描画するには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#選択リスト_単一選択">選択リスト (単一選択)</a>
+					<ul>
+						<li>
+							<a href="#単一選択の選択リストを使うには">
+								単一選択の選択リストを使うには
+							</a>
+						</li>
+						<li>
+							<a href="#単一選択の選択リストで項目が選択された状態で表示するには">
+								単一選択の選択リストで項目が選択された状態で表示するには
+							</a>
+						</li>
+						<li>
+							<a href="#単一選択の選択リストで選択してくださいを出さないようにするには">
+								単一選択の選択リストで「選択してください」を出さないようにするには
+							</a>
+						</li>
+						<li>
+							<a href="#単一選択の選択リストで選択されたラベルをポストバック時に受け取るには">
+								単一選択の選択リストで選択されたラベルをポストバック時に受け取るには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#選択リスト_複数選択">選択リスト (複数選択)</a>
+					<ul>
+						<li>
+							<a href="#複数選択の選択リストを使うには">
+								複数選択の選択リストを使うには
+							</a>
+						</li>
+						<li>
+							<a href="#複数選択の選択リストで項目が選択された状態で表示するには">
+								複数選択の選択リストで項目が選択された状態で表示するには
+							</a>
+						</li>
+						<li>
+							<a href="#複数選択の選択リストで選択してくださいを出さないようにするには">
+								複数選択の選択リストで「選択してください」を出さないようにするには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#ファイルアップロード">ファイルアップロード</a>
+					<ul>
+						<li>
+							<a href="#ファイルアップロードを使うには">
+								ファイルアップロードを使うには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#隠しフィールド">隠しフィールド</a>
+					<ul>
+						<li>
+							<a href="#隠しフィールドを使うには">隠しフィールドを使うには</a>
+						</li>
+						<li>
+							<a href="#隠しフィールドにシリアライズしたオブジェクトを保存するには">
+								隠しフィールドにシリアライズしたオブジェクトを保存するには
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#サブミットボタン">サブミットボタン</a>
+					<ul>
+						<li>
+							<a href="#サブミットボタンを使うには">サブミットボタンを使うには</a>
+						</li>
+						<li>
+							<a href="#二重サブミットを防止するには">二重サブミットを防止するには</a>
+						</li>
+						<li>
+							<a href="#二重サブミットをクライアント側で防止するには">
+								二重サブミットをクライアント側で防止するには
+							</a>
+						</li>
+						<li>
+							<a href="#サブミットボタンで画面遷移だけするには">
+								サブミットボタンで画面遷移だけするには
+							</a>
+						</li>
+						<li>
+							<a href="#バリデーションしないで画面遷移だけするには">
+								バリデーションしないで画面遷移だけするには
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		<section name="フォーム">
+			<subsection name="ポストバック用のフォームを使うには">
+				<div class="sidebar">
+					外部サイトへサブミットするなど，
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					用でないフォームは
+					<code>&lt;form&gt;</code>
+					要素に
+					<code>id</code>
+					を付けないか，
+					<code>form</code>
+					または
+					<code>Form</code>
+					で終わらないようにします．
+				</div>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					用のフォームは，
+					<code>&lt;form&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付け， 値を
+					<code>form</code>
+					または
+					<code>Form</code>
+					で終わるようにします．
+				</p>
+				<p>
+					<code>action</code>
+					属性および
+					<code>method</code>
+					属性，
+					<code>name</code>
+					属性はレンダリング時に付加されます (テンプレートに記述されていても無視されます)．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<form id="form">
+  ...
+</form>
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>レンダリング結果は次のようになります．</p>
+				<source><![CDATA[
+<form id="form" name="form" method="post" action="/context/view/subapp/foo.html">
+  ...
+</form>
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="テキストフィールド">
+			<subsection name="テキストフィールドを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					属性は省略することもできます．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>text</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付け， その値と同じ名前のプロパティをページクラスに用意します．
+				</p>
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					レンダリング時，
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性にプロパティの値が設定されます． プロパティの値が
+					<code>'&lt;'</code>
+					や
+					<code>'&gt;'</code>
+					等を含む場合はエスケープされます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで入力された値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="text" id="name" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String name;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>name</code>
+					プロパティの値が
+					<code>"Teeda"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="text" id="name" name="form:name" value="Teeda" />
+]]></source>
+				<p>
+					テキストフィールドに
+					<code>"Seasar"</code>
+					と入力してサブミットすると， ページクラスの
+					<code>name</code>
+					プロパティには
+					<code>"Seasar"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="数値の入力を支援するには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>class</code>
+					属性に
+					<code>"T_currency"</code>
+					を含めます．
+				</p>
+				<p>
+					テキストフィールドに入力できるのは数字と符号 (
+					<code>'-'</code>
+					)，小数点 (
+					<code>'.'</code>
+					)，カンマ (
+					<code>','</code>
+					) に限定されます． 数字の後に
+					<code>'t'</code>
+					，
+					<code>'m'</code>
+					，
+					<code>'b'</code>
+					キーを押すと，入力済みの数がそれぞれ 1,000 倍，1,000,000 倍，
+					1,000,000,000 倍されます．
+				</p>
+				<p>不正なキーが押されるとテキストフィールドはクリアされます．</p>
+				<p>フォーカスが外れると入力した数はカンマ区切りになります．</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="text" id="saraly" class="T_currency" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public BigDecimal saraly;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="text" id="salary" name="form:salary" class="T_currency" 
+    onfocus="..." onblur="..." onkeydown="..." style="ime-mode:disabled;" />
+]]></source>
+			</subsection>
+
+			<subsection name="日付の入力を支援するには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>class</code>
+					属性に
+					<code>"T_date"</code>
+					を含めます．
+				</p>
+				<p>
+					テキストフィールドに入力できるのは数字とスラッシュ (
+					<code>'/'</code>
+					) に限定されます．
+				</p>
+				<p>
+					年は二桁で入力することができます． フォーカスが外れると年は4桁に変換され，
+					スラッシュ区切りになります．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="text" id="date" class="T_date" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+@DateTimeConverter(pattern = "yyyy/MM")
+public Date date;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="text" id="date" name="form:date" class="T_date" 
+    onfocus="..." onblur="..." onkeydown="..." style="ime-mode:disabled;" />
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="パスワードフィールド">
+			<subsection name="パスワードフィールドを使うには">
+				<p>
+					<code>type</code>
+					属性が
+					<code>password</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付け， その値と同じ名前のプロパティをページクラスに用意します．
+				</p>
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					レンダリング時，
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性に値は設定されません．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで入力された値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="password" id="pwd" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String pwd;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="password" id="pwd" name="form:pwd" />
+]]></source>
+				<p>
+					パスワードフィールドに
+					<code>"1234"</code>
+					と入力してサブミットすると， ページクラスの
+					<code>pwd</code>
+					プロパティには
+					<code>"1234"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="パスワードフィールドに初期値を表示するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>password</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素に
+					<code>te:redisplay</code>
+					属性を付け， その値に
+					<code>true</code>
+					を指定します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性にプロパティの値が設定されます． プロパティの値が
+					<code>'&lt;'</code>
+					や
+					<code>'&gt;'</code>
+					等を含む場合はエスケープされます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで入力された値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="password" id="pwd" te:redisplay="true" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String pwd;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>pwd</code>
+					プロパティの値が
+					<code>"hoge"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="password" id="pwd" name="form:pwd" value="hoge" />
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="テキストエリア">
+			<subsection name="テキストエリアを使うには">
+				<div class="sidebar">
+					<code>id</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;textarea&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付け， その値と同じ名前のプロパティをページクラスに用意します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;textarea&gt;</code>
+					要素の内容にはプロパティの値が設定されます． プロパティの値が
+					<code>'&lt;'</code>
+					や
+					<code>'&gt;'</code>
+					等を含む場合はエスケープされます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで入力された値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<textarea id="name">dummy</textarea>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String name;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>name</code>
+					プロパティの値が
+					<code>"Teeda"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<textarea id="name" name="form:name">Teeda</textarea>
+]]></source>
+				<p>
+					テキストエリアに
+					<code>"Seasar"</code>
+					と入力してサブミットすると， ページクラスの
+					<code>name</code>
+					プロパティには
+					<code>"Seasar"</code>
+					が設定されます．
+				</p>
+			</subsection>
+		</section>
+
+		<section name="ラジオボタン (静的)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「inputRadio」と呼ばれます．
+			</div>
+			<p>
+				静的なラジオボタンは， 一つ一つが独立したコンポーネントからなるラジオボタンです．
+				それぞれのラジオボタンは同じ名前を持つラジオボタンとの間で排他的に選択されます．
+			</p>
+			<p>
+				静的なラジオボタンは，テンプレートHTMLに記述された
+				<code>&lt;input&gt;</code>
+				をそのままレンダリングでも使用するタイプのラジオボタンです．
+			</p>
+
+			<subsection name="静的なラジオボタンを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付け， その値と同じ名前のプロパティをページクラスに用意します．
+					このプロパティは選択された項目の値を保持します．
+				</p>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素の内容に
+					<code>type</code>
+					属性が
+					<code>radio</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述して，その
+					<code>name</code>
+					属性に
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ値を指定します． 同じ
+					<code>name</code>
+					属性を持つ
+					<code>&lt;input type="radio"&gt;</code>
+					要素を複数記述することができます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択されたラジオボタンの
+					<code>value</code>
+					属性の値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合はプロパティは設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<div id="selected">
+    <label><input type="radio" name="selected" value="A" />A</label>
+    <label><input type="radio" name="selected" value="B" />B</label>
+    <label><input type="radio" name="selected" value="C" />C</label>
+</div>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String selected;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<div id="selected">
+    <label><input type="radio" name="form:selected" value="A" />A</label>
+    <label><input type="radio" name="form:selected" value="B" />B</label>
+    <label><input type="radio" name="form:selected" value="C" />C</label>
+</div>
+]]></source>
+				<p>
+					2番目のラジオボタン(B)を選択してサブミットすると， ページクラスの
+					<code>selected</code>
+					プロパティには
+					<code>"B"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="静的なラジオボタンをチェックされた状態で表示するには">
+				<p>
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティに，チェックされた状態で表示したい
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性と同じ値を設定します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>input</code>
+					要素の
+					<code>value</code>
+					属性の値が，
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティの値と一致する
+					<code>&lt;input&gt;</code>
+					要素には，
+					<code>checked</code>
+					属性が付け加えられます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<div id="selected">
+    <label><input type="radio" name="selected" value="A" />A</label>
+    <label><input type="radio" name="selected" value="B" />B</label>
+    <label><input type="radio" name="selected" value="C" />C</label>
+</div>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String selected;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selected</code>
+					プロパティの値が
+					<code>"A"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<div id="selected">
+    <label><input type="radio" name="form:selected" value="A" checked="checked" />A</label>
+    <label><input type="radio" name="form:selected" value="B" />B</label>
+    <label><input type="radio" name="form:selected" value="C" />C</label>
+</div>
+]]></source>
+			</subsection>
+
+			<subsection name="静的なラジオボタンの値を動的に変えるには">
+				<p>
+					「
+					<a href="output.html#属性値を動的に出力するには">ダイナミックプロパティ</a>
+					」と組み合わせます．
+				</p>
+				<p>
+					<code>type</code>
+					属性が
+					<code>radio</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付け， その値に
+					<code>Value</code>
+					を加えた名前のプロパティをページクラスに用意します．
+					このプロパティは項目の値を保持します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>input</code>
+					要素の
+					<code>value</code>
+					属性の値は
+					<code>id + <var>Value</var></code>
+					という名前のプロパティ値に置き換えられます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<div id="selected">
+    <label>
+        <input type="radio" id="code1" name="selected" value="dummy" />
+        <span id="name1" te:omittag="true">dummy</span>
+    </label>
+    <label>
+        <input type="radio" id="code2" name="selected" value="dummy" />
+        <span id="name2" te:omittag="true">dummy</span>
+    </label>
+</div>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String selected;
+public String code1Value;
+public String name1;
+public String code2Value;
+public String name2;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>code1Value</code>
+					が
+					<code>"t"</code>
+					，
+					<code>name1</code>
+					が
+					<code>"Teeda"</code>
+					で，
+					<code>code2Value</code>
+					が
+					<code>"s"</code>
+					，
+					<code>name2</code>
+					が
+					<code>"SAStruts"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<div id="selected">
+    <label>
+        <input type="radio" id="code1" name="form:selected" value="t" />
+        Teeda
+    </label>
+    <label>
+        <input type="radio" id="code2" name="form:selected" value="s" />
+        SAStruts
+    </label>
+</div>
+]]></source>
+				<p>
+					1番目のラジオボタン(Teeda)を選択してサブミットすると， ページクラスの
+					<code>selected</code>
+					プロパティには
+					<code>"t"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="静的なラジオボタンの数を動的に変えるには">
+				<p>
+					<a href="foreach.html">forEach</a>
+					と組み合わせます．
+				</p>
+				<div class="sidebar">
+					サブミットされた値を受け取るには
+					<code>Items</code>
+					プロパティを保存する必要があります． 詳細は「
+					<a href="#隠しフィールドにシリアライズしたオブジェクトを保存するには">
+						隠しフィールドにシリアライズしたオブジェクトを保存するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素または
+					<code>&lt;div&gt;</code>
+					要素の内容に，forEach にマッピングされる (
+					<code>id</code>
+					属性が
+					<code>Items</code>
+					で終わる) 要素を記述します． その
+					<code>id</code>
+					属性と同じ値を持つプロパティをページクラスに用意します． このプロパティの型は配列または
+					<code>java.util.List</code>
+					に，その要素の型はDtoまたは
+					<code>java.util.Map</code>
+					にします．
+				</p>
+				<p>
+					<code>type</code>
+					属性が
+					<code>radio</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付けます．
+				</p>
+				<p>
+					<code>input</code>
+					要素の
+					<code>id + <var>Value</var></code>
+					という名前を持つDtoのプロパティまたは
+					<code>Map</code>
+					のキーを用意します．
+					Dtoのプロパティまたは
+					<code>Map</code>
+					のキーと同じ名前のプロパティをページクラスにも持たせます．
+				</p>
+				<p>
+					レンダリング時，
+					<code>input</code>
+					要素の
+					<code>value</code>
+					属性の値は
+					<code>id + <var>Value</var></code>
+					という名前のプロパティ値に置き換えられます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="productItemsSave" />
+<div id="selected">
+    <div id="productItems">
+        <label>
+            <input type="radio" id="code" name="selected" value="dummy" />
+            <span id="name" te:omittag="true">dummy</span>
+        </label>
+    </div>
+</div>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String selected;
+public List<ProductDto> productItems;
+public String codeValue; //Teedaが設定
+public String name; //Teedaが設定
+]]></source>
+				<h5>例：Dtoのプロパティ (ProductDto.java)</h5>
+				<source><![CDATA[
+public String codeValue;
+public String name;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>productItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="hidden" id="form:productItemsSave" value="..." />
+<div id="selected">
+    
+        <label>
+            <input type="radio" id="form:productImtems:0:code" name="form:selected" value="t" />
+            Teeda
+        </label>
+        <label>
+            <input type="radio" id="form:productImtems:1:code" name="form:selected" value="s" />
+            SAStruts
+        </label>
+        <label>
+            <input type="radio" id="form:productImtems:2:code" name="form:selected" value="c" />
+            Cubby
+        </label>
+    
+</div>
+]]></source>
+				<p>
+					1番目のラジオボタン(Teeda)を選択してサブミットすると， ページクラスの
+					<code>selected</code>
+					プロパティには
+					<code>"t"</code>
+					が設定されます．
+				</p>
+				<h4>関連項目</h4>
+				<ul>
+					<li>
+						<a href="">forEach</a>
+					</li>
+					<li>
+						<a href="">itemsSave</a>
+					</li>
+				</ul>
+			</subsection>
+		</section>
+
+		<section name="ラジオボタン (動的)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「selectOneRadio」と呼ばれ， 複数のラジオボタンから構成されます．
+			</div>
+			<p>動的なラジオボタンは， 複数のラジオボタンの集まりによって構成されるコンポーネントです．</p>
+			<p>
+				動的なラジオボタンでは，テンプレートHTMLに記述された
+				<code>&lt;input&gt;</code>
+				要素はレンダリングで使用されません．
+				<code>&lt;input&gt;</code>
+				要素はselectOneRadioによって動的に生成されます．
+			</p>
+			<p>
+				デフォルトでは，複数のラジオボタンが
+				<code>&lt;table&gt;</code>
+				要素を使って横にレイアウトされます．
+			</p>
+
+			<subsection name="動的なラジオボタンを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付けます． 要素の内容には，
+					<code>type</code>
+					属性が
+					<code>radio</code>
+					で，
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ
+					<code>name</code>
+					属性を持つ
+					<code>&lt;input&gt;</code>
+					要素を記述します． この
+					<code>&lt;input&gt;</code>
+					要素は実行時には捨てられます (ブラウザで直接プレビューする際のモックとして活用してください)．
+				</p>
+				<p>
+					ページクラスに2つのプロパティを用意します． 一つめは
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前で， 配列型のプロパティです． このプロパティは選択された項目の値を保持します．
+				</p>
+				<p>
+					二つめは
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>Items</code>
+					を加えた名前で， 型は次のいずれかです．
+				</p>
+				<ul>
+					<li>
+						配列または
+						<code>java.util.List</code>
+					</li>
+					<li>
+						<code>java.util.Map</code>
+					</li>
+				</ul>
+				<p>
+					配列または
+					<code>List</code>
+					型の場合は， その要素型はDtoまたは
+					<code>java.util.Map</code>
+					で，
+					<code>label</code>
+					および
+					<code>value</code>
+					というプロパティ (
+					<code>Map</code>
+					の場合はキー) でラジオボタンのラベルと値を保持します．
+					<code>Map</code>
+					の場合は，
+					<var>label</var>
+					=
+					<var>value</var>
+					というマッピングでラベルと値を保持します (順序を維持するには
+					<code>java.util.LinkedHashMap</code>
+					を使います)．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;span&gt;</code>
+					要素の内容は
+					<code>Items</code>
+					プロパティの要素の数分の
+					<code>&lt;input&gt;</code>
+					要素に置き換えられます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された項目の値が
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="select">
+    <input type="radio" name="select" /> Item1
+    <input type="radio" name="select" /> Item2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="select">
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="A" />AAAA</label>
+        </td>
+        <td>
+            <label><input type="radio" name="form:select" value="B" />BBBB</label>
+        </td>
+        <td>
+            <label><input type="radio" name="form:select" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+				<p>
+					最初のラジオボタンを選択してサブミットすると， ページクラスの
+					<code>select</code>
+					プロパティには，
+					<code>"A"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="動的なラジオボタンで1行に描画される数を指定するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:col</code>
+					属性に 1 行あたりのチェックボックスの数を指定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="select" te:col="2">
+    <input type="radio" name="select" />Item1
+    <input type="radio" name="select" />Item2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="select">
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="A" />AAAA</label>
+        </td>
+        <td>
+            <label><input type="radio" name="form:select" value="B" />BBBB</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+			</subsection>
+
+			<subsection name="動的なラジオボタンを縦に並べるには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:layout</code>
+					属性に
+					<code>pageDirection</code>
+					を指定します (デフォルトは
+					<code>lineDirection</code>
+					です)．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="select" te:layout="pageDirection">
+    <input type="radio" name="select" />Item1
+    <input type="radio" name="select" />Item2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="select">
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="A" />AAAA</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="B" />BBBB</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+			</subsection>
+
+			<subsection name="動的なラジオボタンでテーブルを使わずに描画するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:layout</code>
+					属性に
+					<code>none</code>
+					を指定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="select" te:layout="none">
+    <input type="radio" name="select" />Option1
+    <input type="radio" name="select" />Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<label><input type="radio" name="form:select" value="A" />AAAA</label>
+<label><input type="radio" name="form:select" value="B" />BBBB</label>
+<label><input type="radio" name="form:select" value="C" />CCCC</label>
+]]></source>
+			</subsection>
+
+			<subsection name="動的なラジオボタンで選択されたラベルをポストバック時に受け取るには">
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時に， 選択された項目の値だけではなく， ラベルもプロパティで受け取るには，
+					<code>&lt;span&gt;</code>
+					要素よりも
+					<strong>前</strong>
+					に，
+					<a href="#隠しフィールドにシリアライズしたオブジェクトを保存するには">隠しフィールド</a>
+					(
+					<code>input</code>
+					要素) を用意します．
+					<code>input</code>
+					要素の
+					<code>id</code>
+					属性は，
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>ItemsSave</code>
+					を加えた名前を指定します．
+				</p>
+				<p>
+					ページクラスにラベルを受け取るプロパティを用意します． プロパティは
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>Label</code>
+					を加えた名前で， 型は
+					<code>String</code>
+					とします．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された項目のラベルが
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>Label</code>
+					を加えた名前のプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="selectItemsSave" />
+<span id="select">
+    <input type="radio" name="select" /> Item1
+    <input type="radio" name="select" /> Item2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public String selectLabel;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="hidden" id="selectItemsSave" name="form:selectItemsSave" value="..." />
+<table id="select">
+    <tr>
+        <td>
+            <label><input type="radio" name="form:select" value="A" />AAAA</label>
+        </td>
+        <td>
+            <label><input type="radio" name="form:select" value="B" />BBBB</label>
+        </td>
+        <td>
+            <label><input type="radio" name="form:select" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+				<p>
+					最初のラジオボタンを選択してサブミットすると， ページクラスの
+					<code>selectLabel</code>
+					プロパティには，
+					<code>"AAAA"</code>
+					が設定されます．
+				</p>
+			</subsection>
+		</section>
+
+		<section name="チェックボックス (単一項目)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「selectBooleanCheckbox」と呼ばれます．
+			</div>
+			<p>単一項目のチェックボックスは， 一つのチェックボックスだけで構成されるコンポーネントです．</p>
+
+			<subsection name="単一項目のチェックボックスを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>checkbox</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付け， その値と同じ名前で型が
+					<code>boolean</code>
+					のプロパティをページクラスに用意します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性にプロパティの値が設定されます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された状態がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="checkbox" id="option" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public boolean option;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="checkbox" id="option" name="form:option" value="true" />
+]]></source>
+				<p>
+					チェックボックスを選択してサブミットすると， ページクラスの
+					<code>option</code>
+					プロパティには
+					<code>true</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="単一項目のチェックボックスをチェックされた状態で表示するには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティを
+					<code>true</code>
+					に設定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="checkbox" id="option" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public boolean option;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>option</code>
+					プロパティの値が
+					<code>true</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="checkbox" id="option" name="form:option" value="true" checked="checked" />
+]]></source>
+				<p>
+					チェックボックスの選択を解除してサブミットすると， ページクラスの
+					<code>option</code>
+					プロパティには
+					<code>false</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="単一項目のチェックボックスを複数使うには">
+				<p>
+					<a href="foreach.html">forEach</a>
+					と組み合わせます．
+				</p>
+				<div class="sidebar">
+					サブミットされた値を受け取るには
+					<code>Items</code>
+					プロパティを保存する必要があります． 詳細は「
+					<a href="#隠しフィールドにシリアライズしたオブジェクトを保存するには">
+						隠しフィールドにシリアライズしたオブジェクトを保存するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					forEach にマッピングされる (
+					<code>id</code>
+					属性が
+					<code>Items</code>
+					で終わる) 要素を記述します． その
+					<code>id</code>
+					属性と同じ値を持つプロパティをページクラスに用意します． このプロパティの型は配列または
+					<code>java.util.List</code>
+					に，その要素の型はDtoまたは
+					<code>java.util.Map</code>
+					にします． Dtoのプロパティまたは
+					<code>Map</code>
+					のキーと同じ名前のプロパティをページクラスにも持たせます．
+				</p>
+				<p>
+					<code>type</code>
+					属性が
+					<code>checkbox</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付け， Dtoのプロパティまたは
+					<code>Map</code>
+					のキーと同じ名前を付けます．
+				</p>
+				<p>
+					レンダリング時，
+					<code>input</code>
+					要素の
+					<code>value</code>
+					属性の値は
+					<code>id</code>
+					属性の値と同じ名前のプロパティに置き換えられます．
+				</p>
+				<div class="caution">
+					<div>注意点</div>
+					<p>
+						サブミットされるフォームデータにチェックされなかった項目は含まれないため，
+						繰り返しの中にチェックボタンしか項目がない場合，
+						繰り返しの数を正確に判定できない場合があります．
+						これを回避するには，繰り返しの中に隠し項目を含めるようにします．
+					</p>
+				</div>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="optionItemsSave" />
+<div id="optionItems">
+    <label>
+        <input type="checkbox" id="checked" value="dummy" />
+        <span id="name" te:omittag="true">dummy</span>
+    </label>
+    <input type="hidden" id="name-2" value="dummy" />
+</div>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public List<OptionDto> optionItems;
+public boolean checked; //Teedaが設定
+public String name;     //Teedaが設定
+]]></source>
+				<h5>例：Dtoのプロパティ (OptionDto.java)</h5>
+				<source><![CDATA[
+public boolean checked;
+public String name;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が2つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="hidden" id="form:optionItemsSave" value="..." />
+    
+    <label>
+        <input type="checkbox" id="checked" name="form:optionItems:0:checked" value="true" />
+        Teeda
+    </label>
+    <input type="hidden" id="name-2" name="form:optionItems:0:name-2" value="Teeda" />
+    <label>
+        <input type="checkbox" id="checked" name="form:optionItems:1:checked" value="true" />
+        SAStruts
+    </label>
+    <input type="hidden" id="name-2" name="form:optionItems:1:name-2" value="SAStruts" />
+    
+]]></source>
+				<p>
+					1番目のチェックボックス(Teeda)を選択してサブミットすると， ページクラスの
+					<code>optionItems</code>
+					の最初の要素の
+					<code>option</code>
+					プロパティには
+					<code>true</code>
+					が，2番目の要素の
+					<code>option</code>
+					プロパティには
+					<code>false</code>
+					が設定されます．
+				</p>
+				<h4>関連項目</h4>
+				<ul>
+					<li>
+						<a href="">forEach</a>
+					</li>
+					<li>
+						<a href="">itemsSave</a>
+					</li>
+				</ul>
+			</subsection>
+		</section>
+
+		<section name="チェックボックス (複数項目)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「selectManyCheckbox」と呼ばれ，
+				複数のチェックボックスから構成されます．
+			</div>
+			<p>複数項目のチェックボックスは， 複数のチェックボックスの集まりによって構成されるコンポーネントです．</p>
+			<p>
+				複数項目のチェックボックスでは，テンプレートHTMLに記述された
+				<code>&lt;input&gt;</code>
+				要素はレンダリングで使用されません．
+				<code>&lt;input&gt;</code>
+				要素はselectManyCheckboxによって動的に生成されます．
+			</p>
+			<p>
+				デフォルトでは，複数のチェックボックスが
+				<code>&lt;table&gt;</code>
+				要素を使って横にレイアウトされます．
+			</p>
+
+			<subsection name="複数項目のチェックボックスを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付けます． 要素の内容には，
+					<code>type</code>
+					属性が
+					<code>checkbox</code>
+					で，
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ
+					<code>name</code>
+					属性を持つ
+					<code>&lt;input&gt;</code>
+					要素を記述します． この
+					<code>&lt;input&gt;</code>
+					要素は実行時には捨てられます (ブラウザで直接プレビューする際のモックとして活用してください)．
+				</p>
+				<p>
+					ページクラスに2つのプロパティを用意します． 一つめは
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前で， 配列型のプロパティです． このプロパティは選択された項目の値を保持します．
+				</p>
+				<p>
+					二つめは
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>Items</code>
+					を加えた名前で， 型は次のいずれかです．
+				</p>
+				<ul>
+					<li>
+						配列または
+						<code>java.util.List</code>
+					</li>
+					<li>
+						<code>java.util.Map</code>
+					</li>
+				</ul>
+				<p>
+					配列または
+					<code>List</code>
+					型の場合は， その要素型はDtoまたは
+					<code>java.util.Map</code>
+					で，
+					<code>label</code>
+					および
+					<code>value</code>
+					というプロパティ (
+					<code>Map</code>
+					の場合はキー) でラジオボタンのラベルと値を保持します．
+					<code>Map</code>
+					の場合は，
+					<var>label</var>
+					=
+					<var>value</var>
+					というマッピングでラベルと値を保持します (順序を維持するには
+					<code>java.util.LinkedHashMap</code>
+					を使います)．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;span&gt;</code>
+					要素の内容は
+					<code>Items</code>
+					プロパティの要素の数分の
+					<code>&lt;input&gt;</code>
+					要素に置き換えられます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された項目の値が
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="option">
+    <input type="checkbox" name="option" /> Option1
+    <input type="checkbox" name="option" /> Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] option;
+public List<Map> optionItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="option">
+    <tr>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="A" />
+                AAAA
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="B" />
+                BBBB
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="C" />
+                CCCC
+            </label>
+        </td>
+    </tr>
+</table>
+]]></source>
+				<p>
+					全てのチェックボックスを選択してサブミットすると， ページクラスの
+					<code>option</code>
+					プロパティには，
+					<code>"A"</code>
+					，
+					<code>"B"</code>
+					，
+					<code>"C"</code>
+					を要素とする配列が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="複数項目のチェックボックスで項目がチェックされた状態で表示するには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前のプロパティに， 選択状態にしたい項目の値を要素とする配列を設定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="option">
+    <input type="checkbox" name="option" /> Option1
+    <input type="checkbox" name="option" /> Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] option;
+public List<Map> optionItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>option</code>
+					プロパティに
+					<code>"A"</code>
+					と
+					<code>"C"</code>
+					を要素とする配列を設定すると， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="option">
+    <tr>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="A" checked="checked" />
+                AAAA
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="B" />
+                BBBB
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="checkbox" name="form:option" value="C" checked="checked" />
+                CCCC
+            </label>
+        </td>
+    </tr>
+</table>
+]]></source>
+			</subsection>
+
+			<subsection name="複数項目のチェックボックスで1行に描画される数を指定するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:col</code>
+					属性に 1 行あたりのチェックボックスの数を指定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="option" te:col="2">
+    <input type="checkbox" name="option" /> Option1
+    <input type="checkbox" name="option" /> Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] option;
+public List<Map> optionItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="option">
+    <tr>
+        <td>
+            <label><input type="checkbox" name="form:option" value="A" />AAAA</label>
+        </td>
+        <td>
+            <label><input type="checkbox" name="form:option" value="B" />BBBB</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="checkbox" name="form:option" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+			</subsection>
+
+			<subsection name="複数項目のチェックボックスを縦に並べるには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:layout</code>
+					属性に
+					<code>pageDirection</code>
+					を指定します (デフォルトは
+					<code>lineDirection</code>
+					です)．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="option" te:layout="pageDirection">
+    <input type="checkbox" name="option" /> Option1
+    <input type="checkbox" name="option" /> Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] option;
+public List<Map> optionItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<table id="option">
+    <tr>
+        <td>
+            <label><input type="checkbox" name="form:option" value="A" />AAAA</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="checkbox" name="form:option" value="B" />BBBB</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><input type="checkbox" name="form:option" value="C" />CCCC</label>
+        </td>
+    </tr>
+</table>
+]]></source>
+			</subsection>
+
+			<subsection name="複数項目のチェックボックスでテーブルを使わずに描画するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;span&gt;</code>
+					要素の
+					<code>te:layout</code>
+					属性に
+					<code>none</code>
+					を指定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<span id="option" te:layout="none">
+    <input type="checkbox" name="option1" /> Option1
+    <input type="checkbox" name="option2" /> Option2
+</span>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] option;
+public List<Map> optionItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>optionItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<label><input type="checkbox" name="form:option" value="A" />AAAA</label>
+<label><input type="checkbox" name="form:option" value="B" />BBBB</label>
+<label><input type="checkbox" name="form:option" value="C" />CCCC</label>
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="選択リスト (単一選択)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「selectOneMenu」と呼ばれます．
+			</div>
+			<p>
+				単一選択の選択リストでは，テンプレートHTMLに記述された
+				<code>&lt;option&gt;</code>
+				要素はレンダリングで使用されません．
+				<code>&lt;option&gt;</code>
+				要素はselectOneMenuによって動的に生成されます．
+			</p>
+
+			<subsection name="単一選択の選択リストを使うには">
+				<div class="sidebar">
+					<code>id</code>
+					，
+					<code>name</code>
+					を除いた
+					<code>&lt;select&gt;</code>
+					要素の属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>multiple</code>
+					属性を指定しない
+					<code>&lt;select&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付けます．
+					<code>&lt;select&gt;</code>
+					要素の内容には
+					<code>&lt;option&gt;</code>
+					要素を記述することができます． この
+					<code>&lt;option&gt;</code>
+					要素は実行時には捨てられます (ブラウザで直接プレビューする際のモックとして活用してください)．
+				</p>
+				<p>
+					ページクラスに2つのプロパティを用意します． 一つめは
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前のプロパティで， 選択された項目の値を保持します．
+				</p>
+				<p>
+					二つめは
+					<code>&lt;select&gt;</code>
+					の
+					<code>id</code>
+					属性の値に
+					<code>Items</code>
+					を加えた名前で， 型は次のいずれかです．
+				</p>
+				<ul>
+					<li>
+						配列または
+						<code>java.util.List</code>
+					</li>
+					<li>
+						<code>java.util.Map</code>
+					</li>
+				</ul>
+				<p>
+					配列または
+					<code>List</code>
+					型の場合は， その要素型はDtoまたは
+					<code>java.util.Map</code>
+					で，
+					<code>label</code>
+					および
+					<code>value</code>
+					というプロパティ (
+					<code>Map</code>
+					の場合はキー) でラジオボタンのラベルと値を保持します．
+					<code>Map</code>
+					の場合は，
+					<var>label</var>
+					=
+					<var>value</var>
+					というマッピングでラベルと値を保持します (順序を維持するには
+					<code>java.util.LinkedHashMap</code>
+					を使います)．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;option&gt;</code>
+					要素の
+					<code>value</code>
+					属性に
+					<code>value</code>
+					プロパティまたは
+					<code>Map</code>
+					のキーが， 内容に
+					<code>label</code>
+					プロパティまたは
+					<code>Map</code>
+					の値が設定されます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された
+					<code>&lt;option&gt;</code>
+					要素の
+					<code>value</code>
+					属性の値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<select id="select">
+    <option value="0">dummy</option>
+</select>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<select id="select" name="form:select">
+    <option value="">選択してください</option>
+    <option value="t">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+				<p>
+					選択リストで
+					<code>Teeda</code>
+					を選択してサブミットすると， ページクラスの
+					<code>select</code>
+					プロパティには
+					<code>"t"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="単一選択の選択リストで項目が選択された状態で表示するには">
+				<p>
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前のプロパティに， 選択状態にしたい項目の値を設定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<select id="select">
+    <option value="0">dummy</option>
+</select>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>select</code>
+					プロパティに
+					<code>"t"</code>
+					を設定すると， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<select id="select" name="form:select">
+    <option value="">選択してください</option>
+    <option value="t" selected="selected">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+			</subsection>
+
+			<subsection name="単一選択の選択リストで「選択してください」を出さないようにするには">
+				<div class="sidebar">
+					「選択してください」というメッセージは， 「
+					<a href="../reference/resource.html#メッセージ">
+						メッセージリソース
+					</a>
+					」で変更することができます．
+				</div>
+				<p>
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前のプロパティを必須項目にします．
+				</p>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+@Required
+public String select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<select id="select" name="form:select">
+    <option value="t">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+				<p>どの項目も選択しないでサブミットすると， バリデーションでエラーとなります．</p>
+				<p>
+					アプリケーション全体で「選択してください」が出力されないようにするには，
+					<code>teedaCustomize.dicon</code>
+					に次の定義を記述します．
+				</p>
+				<source><![CDATA[
+<component class="org.seasar.teeda.extension.util.NullLabelStrategyImpl">
+    <property name="forceNullLabel">
+        @org.seasar.teeda.extension.util.NullLabelStrategy@FORCE_NO_NULL_LABEL
+    </property>
+</component>
+]]></source>
+			</subsection>
+
+			<subsection name="単一選択の選択リストで選択されたラベルをポストバック時に受け取るには">
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時に， 選択された項目の値だけではなく， ラベルもプロパティで受け取るには，
+					<code>&lt;select&gt;</code>
+					要素よりも
+					<strong>前</strong>
+					に，
+					<a href="#隠しフィールドにシリアライズしたオブジェクトを保存するには">隠しフィールド</a>
+					(
+					<code>input</code>
+					要素) を用意します．
+					<code>input</code>
+					要素の
+					<code>id</code>
+					属性は，
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値に
+					<code>ItemsSave</code>
+					を加えた名前を指定します．
+				</p>
+				<p>
+					ページクラスにラベルを受け取るプロパティを用意します． プロパティは
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値の値に
+					<code>Label</code>
+					を加えた名前で， 型は
+					<code>String</code>
+					とします．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された項目のラベルが
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値の値に
+					<code>Label</code>
+					を加えた名前のプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="selectItemsSave" />
+<select id="select">
+    <option value="0">dummy</option>
+</select>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public String selectLabel;
+public List<Map> selectItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="hidden" id="selectItemsSave" name="form:selectItemsSave" value="..." />
+<select id="select" name="form:select">
+    <option value="">選択してください</option>
+    <option value="t" selected="selected">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+				<p>
+					選択リストで
+					<code>Teeda</code>
+					を選択してサブミットすると， ページクラスの
+					<code>selectLabel</code>
+					プロパティには，
+					<code>"Teeda"</code>
+					が設定されます．
+				</p>
+			</subsection>
+		</section>
+
+		<section name="選択リスト (複数選択)">
+			<div class="sidebar">
+				ここで使われるコンポーネントは「selectManyList」と呼ばれます．
+			</div>
+			<p>
+				複数選択の選択リストでは，テンプレートHTMLに記述された
+				<code>&lt;option&gt;</code>
+				要素はレンダリングで使用されません．
+				<code>&lt;option&gt;</code>
+				要素はselectManyListによって動的に生成されます．
+			</p>
+
+			<subsection name="複数選択の選択リストを使うには">
+				<div class="sidebar">
+					<code>id</code>
+					，
+					<code>name</code>
+					を除いた
+					<code>&lt;select&gt;</code>
+					要素の属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>multiple</code>
+					属性を指定した
+					<code>&lt;select&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付けます．
+					<code>&lt;select&gt;</code>
+					要素の内容には
+					<code>&lt;option&gt;</code>
+					要素を記述することができます． この
+					<code>&lt;option&gt;</code>
+					要素は実行時には捨てられます (ブラウザで直接プレビューする際のモックとして活用してください)．
+				</p>
+				<p>
+					ページクラスに2つのプロパティを用意します． 一つめは
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前で，配列型のプロパティです．このプロパティは選択された項目の値を保持します．
+				</p>
+				<p>
+					二つめは
+					<code>&lt;select&gt;</code>
+					の
+					<code>id</code>
+					属性の値に
+					<code>Items</code>
+					を加えた名前で， 型は次のいずれかです．
+				</p>
+				<ul>
+					<li>
+						配列または
+						<code>java.util.List</code>
+					</li>
+					<li>
+						<code>java.util.Map</code>
+					</li>
+				</ul>
+				<p>
+					配列または
+					<code>List</code>
+					型の場合は， その要素型はDtoまたは
+					<code>java.util.Map</code>
+					で，
+					<code>label</code>
+					および
+					<code>value</code>
+					というプロパティ (
+					<code>Map</code>
+					の場合はキー) でラジオボタンのラベルと値を保持します．
+					<code>Map</code>
+					の場合は，
+					<var>label</var>
+					=
+					<var>value</var>
+					というマッピングでラベルと値を保持します (順序を維持するには
+					<code>java.util.LinkedHashMap</code>
+					を使います)．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;option&gt;</code>
+					要素の
+					<code>value</code>
+					属性に
+					<code>value</code>
+					プロパティまたは
+					<code>Map</code>
+					のキーが， 内容に
+					<code>label</code>
+					プロパティまたは
+					<code>Map</code>
+					の値が設定されます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザで選択された
+					<code>&lt;option&gt;</code>
+					要素の
+					<code>value</code>
+					属性の値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<select id="select" multiple="multiple">
+    <option value="0">dummy</option>
+</select>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String[] select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>selectItems</code>
+					が3つの要素を持つ場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<select id="select" name="form:select" multiple="multiple">
+    <option value="">選択してください</option>
+    <option value="t">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+				<p>
+					選択リストで
+					<code>Teeda</code>
+					および
+					<code>SAStruts</code>
+					を選択してサブミットすると， ページクラスの
+					<code>select</code>
+					プロパティには
+					<code>"t"</code>
+					と
+					<code>"s"</code>
+					を要素とする配列が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="複数選択の選択リストで項目が選択された状態で表示するには">
+				<p>
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前のプロパティに， 選択状態にしたい項目の値を要素とする配列または
+					<code>List</code>
+					を設定します．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<select id="select" multiple="multiple">
+    <option value="0">dummy</option>
+</select>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>select</code>
+					プロパティに
+					<code>"t"</code>
+					と
+					<code>"s"</code>
+					を要素とする配列を設定すると， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<select id="select" name="form:select" multiple="multiple">
+    <option value="">選択してください</option>
+    <option value="t" selected="selected">Teeda</option>
+    <option value="s" selected="selected">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+			</subsection>
+
+			<subsection name="複数選択の選択リストで「選択してください」を出さないようにするには">
+				<div class="sidebar">
+					「選択してください」というメッセージは， 「
+					<a href="../reference/resource.html#メッセージ">
+						メッセージリソース
+					</a>
+					」で変更することができます．
+				</div>
+				<p>
+					<code>&lt;select&gt;</code>
+					要素の
+					<code>id</code>
+					属性の値と同じ名前のプロパティを必須項目にします．
+				</p>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+@Required
+public String select;
+public List<Map> selecteItems;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<select id="select" name="form:select" multiple="multiple">
+    <option value="t">Teeda</option>
+    <option value="s">SAStruts</option>
+    <option value="c">Cubby</option>
+</select>
+]]></source>
+				<p>どの項目も選択しないでサブミットすると， バリデーションでエラーとなります．</p>
+				<p>
+					アプリケーション全体で「選択してください」が出力されないようにするには，
+					<code>teedaCustomize.dicon</code>
+					に次の定義を記述します．
+				</p>
+				<source><![CDATA[
+<component class="org.seasar.teeda.extension.util.NullLabelStrategyImpl">
+    <property name="forceNullLabel">
+        @org.seasar.teeda.extension.util.NullLabelStrategy@FORCE_NO_NULL_LABEL
+    </property>
+</component>
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="ファイルアップロード">
+			<subsection name="ファイルアップロードを使うには">
+				<p>
+					<code>form</code>
+					要素に
+					<code>enctype</code>
+					属性を追加し，値に
+					<code>multipart/form-data</code>
+					を指定します．
+				</p>
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>file</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述します．
+				</p>
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性と同じ名前で，
+					<code>
+						org.seasar.teeda.extension.util.UploadedFile
+					</code>
+					型のプロパティをページクラスに用意します．
+					<code>
+						org.seasar.teeda.extension.util.UploadedFile
+					</code>
+					の詳細や他に使えるプロパティの型， 
+					<code>web.xml</code>
+					の設定等は「
+					<a href="../../extension_features.html#fileupload">ファイルアップロード</a>
+					」を参照してください．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，ブラウザからアップロードされたファイルがプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<form id="form" enctype="multipart/form-data">
+    ...
+    <input type="file" id="textFile" />
+</form>
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public UploadedFile textFile;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="file" id="textFile" name="form:textFile" />
+]]></source>
+				<p>
+					ファイル名入力フィールドでファイル
+					<code>foo.txt</code>
+					を選択してサブミットすると， ページクラスの
+					<code>textFile</code>
+					プロパティには，
+					<code>name</code>
+					プロパティに
+					<code>"textFile.txt"</code>
+					が設定された
+					<code>
+						org.seasar.teeda.extension.util.UploadedFile
+					</code>
+					が設定されます．
+				</p>
+				<h4>関連項目</h4>
+				<ul>
+					<li>
+						<a href="../../extension_features.html">
+							機能リファレンス
+						</a>
+						<ul>
+							<li>
+								<a href="../../extension_features.html#fileupload">
+									ファイルアップロード
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</subsection>
+		</section>
+
+		<section name="隠しフィールド">
+			<subsection name="隠しフィールドを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>hidden</code>
+					の
+					<code>&lt;input&gt;</code>
+					要素を記述して
+					<code>id</code>
+					属性を付け， その値と同じ名前のプロパティをページクラスに用意します．
+				</p>
+				<p>
+					レンダリング時，
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性にプロパティの値が設定されます． プロパティの値が
+					<code>'&lt;'</code>
+					や
+					<code>'&gt;'</code>
+					等を含む場合はエスケープされます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，隠しフィールドの値がプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="name" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public String name;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<p>
+					<code>name</code>
+					プロパティの値が
+					<code>"Teeda"</code>
+					の場合， レンダリング結果は次のようになります．
+				</p>
+				<source><![CDATA[
+<input type="hidden" id="name" name="form:name" value="Teeda" />
+]]></source>
+				<p>
+					フォームをサブミットすると， ページクラスの
+					<code>name</code>
+					プロパティには
+					<code>"Teeda"</code>
+					が設定されます．
+				</p>
+			</subsection>
+
+			<subsection name="隠しフィールドにシリアライズしたオブジェクトを保存するには">
+				<div class="sidebar">
+					この機能は
+					<code>Items</code>
+					プロパティを保存する場合によく使われます． その場合，
+					<code>id</code>
+					属性の値は
+					<code>ItemsSave</code>
+					で終わります．
+				</div>
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性を，保存するプロパティの名前 +
+					<code>Save</code>
+					にします．
+				</p>
+				<p>
+					レンダリング時，プロパティの値をシリアライズしたバイト列をBase64でエンコードした文字列が
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>value</code>
+					属性に設定されます．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，隠しフィールドの値がデコードおよびデシリアライズされてプロパティに設定されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は設定されません．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="hidden" id="mapSave" />
+]]></source>
+				<h5>例：ページクラスのプロパティ (FooPage.java)</h5>
+				<source><![CDATA[
+public Map map;
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="hidden" id="map" name="form:map" value="..." />
+]]></source>
+			</subsection>
+		</section>
+
+		<section name="サブミットボタン">
+			<subsection name="サブミットボタンを使うには">
+				<div class="sidebar">
+					<code>type</code>
+					属性を
+					<code>button</code>
+					にすると，
+					<a href="preview.html#プレビュー時にサブミットボタンで画面遷移するには">
+						プレビュー時にサブミットボタンで画面遷移する
+					</a>
+					ことができます．
+				</div>
+				<p>
+					<code>type</code>
+					属性が
+					<code>submit</code>
+					，
+					<code>button</code>
+					，
+					<code>image</code>
+					のいずれかの
+					<code>&lt;input&gt;</code>
+					要素を記述します．
+				</p>
+				<p>
+					<code>&lt;input&gt;</code>
+					要素に
+					<code>id</code>
+					属性を付け， その値を
+					<code>do</code>
+					で始めて， ページクラスに同じ名前のメソッドを用意します．
+					<code>do～()</code>
+					メソッドの詳細は 「
+					<a href="../concept/lifecycle.html">ライフサイクル</a>
+					」－「
+					<a href="../concept/lifecycle.html#doメソッド">
+						do～()メソッド
+					</a>
+					」を参照してください．
+				</p>
+				<div class="sidebar">
+					<code>type</code>
+					，
+					<code>id</code>
+					，
+					<code>name</code>
+					，
+					<code>value</code>
+					を除いた属性にはダイナミックプロパティを適用することができます． 詳細は「
+					<a href="output.html#属性値を動的に出力するには">
+						属性値を動的に出力するには
+					</a>
+					」を参照してください．
+				</div>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時， INVOKE_APPLICATIONフェーズで
+					<code>do～()</code>
+					メソッドが呼び出されます． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は呼び出されません． INVOKE_APPLICATIONフェーズについては，「
+					<a href="../concept/lifecycle.html">ライフサイクル</a>
+					」－「
+					<a
+						href="../concept/lifecycle.html#JSFライフサイクルとの関係">
+						JSFライフサイクルとの関係
+					</a>
+					」を参照してください．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="submit" id="doSend" value="送信" />
+]]></source>
+				<h5>例：ページクラスのメソッド (FooPage.java)</h5>
+				<source><![CDATA[
+public Class doSend() {
+    ...
+}
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="submit" id="doSend" name="form:doSend" value="送信" />
+]]></source>
+				<p>
+					フォームをサブミットすると， ページクラスの
+					<code>doSend()</code>
+					メソッドが呼び出されます．
+				</p>
+				<h4>関連項目</h4>
+				<ul>
+					<li>
+						<a href="output.html#属性値を動的に出力するには">
+							属性値を動的に出力するには
+						</a>
+					</li>
+					<li>
+						<a href="output.html#プロパティファイルの内容を属性に出力するには">
+							プロパティファイルの内容を属性に出力するには
+						</a>
+					</li>
+					<li>
+						<a href="../concept/page.html#ページ名の命名規約">
+							ページ名の命名規約
+						</a>
+					</li>
+				</ul>
+			</subsection>
+
+			<subsection name="二重サブミットを防止するには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性およびページクラスのメソッドを
+					<code>doOnce</code>
+					で始めます．
+				</p>
+				<p>
+					<code>id</code>
+					属性が
+					<code>doOnce</code>
+					で始まるサブミットボタンを含むフォームにはトランザクショントークンが埋め込まれます．
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時，
+					トランザクショントークンがチェックされ，二重サブミットを検出すると最初のサブミットに対する応答画面へリダイレクトするか，
+					エラー画面が表示されます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="submit" id="doOnceSend" value="送信" />
+]]></source>
+				<h5>例：ページクラスのメソッド (FooPage.java)</h5>
+				<source><![CDATA[
+public Class doOnceSend() {
+    ...
+}
+]]></source>
+			</subsection>
+
+			<subsection name="二重サブミットをクライアント側で防止するには">
+				<div class="sidebar">
+					<a
+						href="../reference/xhtml.html#Teeda_Extension拡張属性">
+						Teeda Extension拡張属性
+					</a>
+					を使用するには
+					<code>&lt;html&gt;</code>
+					要素で
+					<a href="../reference/xhtml.html#te名前空間">te名前空間</a>
+					を宣言する必要があります．
+				</div>
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性を
+					<code>doOnce</code>
+					で始め，
+					<code>te:renderJs</code>
+					属性に
+					<code>true</code>
+					を指定します．
+				</p>
+				<p>
+					レンダリング時，二重サブミットを防止するJavaScriptを記述した
+					<code>&lt;script&gt;</code>
+					要素等が出力されます．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="submit" id="doOnceSend" value="送信" te:renderJs="true" />
+]]></source>
+			</subsection>
+
+			<subsection name="サブミットボタンで画面遷移だけするには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性を
+					<code>go</code>
+					+
+					<var>遷移先画面名</var>
+					とします．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時， UPDATE_MODEL_VALUESフェーズの後に指定された画面に遷移します． ただし， 「
+					<a href="validation.html">バリデーション</a>
+					」でエラーが発生した場合は遷移しません． UPDATE_MODEL_VALUESフェーズについては，「
+					<a href="../concept/lifecycle.html">ライフサイクル</a>
+					」－「
+					<a
+						href="../concept/lifecycle.html#JSFライフサイクルとの関係">
+						JSFライフサイクルとの関係
+					</a>
+					」を参照してください．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="submit" id="goNextPage" value="次ページ" />
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="submit" id="goNextPage" name="form:goNextPage" value="次ページへ" />
+]]></source>
+				<p>
+					フォームをサブミットすると，
+					<code>nextPage.html</code>
+					に画面遷移します．
+				</p>
+			</subsection>
+
+			<subsection name="バリデーションしないで画面遷移だけするには">
+				<p>
+					<code>&lt;input&gt;</code>
+					要素の
+					<code>id</code>
+					属性を
+					<code>jump</code>
+					+
+					<var>遷移先画面名</var>
+					とします．
+				</p>
+				<p>
+					<a href="../concept/page.html#ポストバック">ポストバック</a>
+					時， APPLY_REQUEST_VALUESフェーズの後に指定された画面へ遷移します．
+					バリデーションは行われません． APPLY_REQUEST_VALUESフェーズについては，「
+					<a href="../concept/lifecycle.html">ライフサイクル</a>
+					」－「
+					<a
+						href="../concept/lifecycle.html#JSFライフサイクルとの関係">
+						JSFライフサイクルとの関係
+					</a>
+					」を参照してください．
+				</p>
+				<h5>例：テンプレートHTML (foo.html)</h5>
+				<source><![CDATA[
+<input type="submit" id="jumpNextPage" value="次ページ" />
+]]></source>
+				<h5>例：レンダリング結果</h5>
+				<source><![CDATA[
+<input type="submit" id="jumpNextPage" name="form:jumpNextPage" value="次ページへ" />
+]]></source>
+				<p>
+					フォームをサブミットすると， バリデーションを行わずに
+					<code>nextPage.html</code>
+					に画面遷移します．
+				</p>
+			</subsection>
+		</section>
+	</body>
+</document>
