@@ -4,50 +4,80 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概要</title>
+		<title>Extension - Abstraction</title>
 	</properties>
 	<body>
-		<section name="Teeda Extension 概要">
+		<section name="Teeda Extension Abstraction">
 			<p>
+<!--
 				Teeda Extensionは， JSF実装であるTeeda
 				Coreの上位に構築されたプレゼンテーションフレームワークで， 以下の特徴を持っています．
+-->
+				Teeda Extension is presentation framework that is build on Teeda Core(JSF implementation).
+                                It has the features below.
 			</p>
 			<dl>
-				<dt>HTMLテンプレート</dt>
+				<dt>HTML Template</dt>
 				<dd>
+<!--
 					JSPではなく，HTMLをテンプレートとして使用します．
 					このため，IDEに依存することなく任意のツールで画面を編集することや，
 					ブラウザによるプレビューが可能です．(
 					<a href="concept/page.html#テンプレートHTML">詳細</a>
 					)
+-->
+					It doesn't use JSP but uses HTML as template.
+                                        So we can edit views by tools that you like without special IDE support,
+                                        preview using internet browsers. (
+					<a href="concept/page.html#Template HTML">Detail</a>
+					)
 				</dd>
-				<dt>ページモデル</dt>
+				<dt>Page model</dt>
 				<dd>
+<!--
 					テンプレートHTMLと対応するページクラスに，表示する内容やロジックを持ちます．
 					HTMLとクラスが1対1に対応するため非常にシンプルです． (
 					<a href="concept/page.html">詳細</a>
 					)
+-->
+                                        "Page class" that is one side in pair with template html has contents to show and related logic.
+                                        It is very simple because HTML template and Page class can be a pair.(
+					<a href="concept/page.html">Detail</a>
+					)
 				</dd>
-				<dt>PRGパターン</dt>
+				<dt>PRG Pattern</dt>
 				<dd>
+<!--
 					画面遷移にPRG (POST-REDIRECT-GET)
 					パターンを採用しているため，URLがずれることがありません． (
 					<a href="concept/prg.html">詳細</a>
 					)
+-->
+					Teeda uses RPG (POST-REDIRECT-GET) pattern for view transition.
+                                        So there is no difference between page contents and URL. (
+					<a href="concept/prg.html">Detail</a>
+					)
 				</dd>
-				<dt>規約重視</dt>
+				<dt>Convention over Configuration</dt>
 				<dd>
+<!--
 					テンプレートHTMLとページクラスは規約によって関連づけられるため， 設定ファイルはほとんど不要です．
+-->
+					Because HTML template and Page class are binded by the convention, Teeda doesn't require much configuration files.
 				</dd>
-				<dt>HOT deploy対応</dt>
+				<dt>HOT deploy</dt>
 				<dd>
+<!--
 					Seasra2.4のHOT deployに対応しているため，
 					Tomcat等のWebコンテナを起動したまま画面の追加や変更を行い， 即座に確認をすることができます．
+-->
+					Teeda can deal with HOT deploy of Seasra2.4,
+					It can add and modify views and check immediately with running Web container such as Tomcat.
 				</dd>
 			</dl>
 		</section>
 
-		<section name="ドキュメント">
+		<section name="Document">
 			<ul>
 <!--
 				<li>
@@ -61,13 +91,13 @@
 				</li>
 -->
 				<li>
-					<a href="concept/index.html">概念</a>
+					<a href="concept/index.html">Concept</a>
 				</li>
 				<li>
-					<a href="reverse/index.html">逆引きリファレンス</a>
+					<a href="reverse/index.html">Reverse reference</a>
 				</li>
 				<li>
-					<a href="reference/index.html">リファレンス</a>
+					<a href="reference/index.html">Reference</a>
 				</li>
 			</ul>
 		</section>

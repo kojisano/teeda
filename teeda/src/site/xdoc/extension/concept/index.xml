@@ -4,26 +4,26 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念</title>
+		<title>Extension - Concept</title>
 	</properties>
 	<body>
-		<section name="Teeda Extension 概念">
-			<p>このドキュメントでは，Teeda Extensionを理解する上で重要な概念について説明します．</p>
+		<section name="Teeda Extension Concept">
+			<p>This section explains about important concept for understanding Teeda Extension</p>
 			<ul>
 				<li>
-					<a href="page.html">ページモデル</a>
+					<a href="page.html">Page model</a>
 				</li>
 				<li>
-					<a href="prg.html">PRGパターン</a>
+					<a href="prg.html">PRG pattern</a>
 				</li>
 				<li>
-					<a href="lifecycle.html">ライフサイクル</a>
+					<a href="lifecycle.html">Lifecycle</a>
 				</li>
 				<li>
-					<a href="scope.html">状態とスコープ</a>
+					<a href="scope.html">State and scope</a>
 				</li>
 				<li>
-					<a href="layout.html">レイアウト</a>
+					<a href="layout.html">Layout</a>
 				</li>
 			</ul>
 		</section>

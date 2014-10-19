@@ -4,66 +4,74 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念 - ページモデル</title>
+		<title>Extension - Concept - Page model</title>
 	</properties>
 	<body>
-		<section name="ページモデル">
+		<section name="Page model">
 			<ul>
 				<li>
-					<a href="#概要">概要</a>
+					<a href="#Abstracts">Abstracts</a>
 				</li>
 				<li>
-					<a href="#テンプレートHTML">テンプレートHTML</a>
+					<a href="#Template HTML">Template HTML</a>
 				</li>
 				<li>
-					<a href="#ページクラス">ページクラス</a>
+					<a href="#Page class">Page class</a>
 				</li>
 				<li>
-					<a href="#レンダリング">レンダリング</a>
+					<a href="#Rendering">Rendering</a>
 				</li>
 				<li>
-					<a href="#ポストバック">ポストバック</a>
+					<a href="#Post back">Post back</a>
 				</li>
 				<li>
-					<a href="#サブアプリケーション">サブアプリケーション</a>
+					<a href="#Sub application">Sub application</a>
 				</li>
 				<li>
-					<a href="#命名規約">命名規約</a>
+					<a href="#Naming convention">Naming convention</a>
 					<ul>
 						<li>
-							<a href="#テンプレートHTMLの命名規約">
-								テンプレートHTMLの命名規約
+							<a href="#Naming convention of Template HTML">
+								Naming convention of Template HTML
 							</a>
 						</li>
 						<li>
-							<a href="#ページクラスの命名規約">ページクラスの命名規約</a>
+							<a href="#Naming convention of Page class">
+								Naming convention of Page class
+							</a>
 						</li>
 						<li>
-							<a href="#ページ名の命名規約">ページ名の命名規約</a>
+							<a href="#Naming convention of Page name">
+								Naming convention of Page name
+							</a>
 						</li>
 					</ul>
 				</li>
 			</ul>
 		</section>
 
-		<section name="概要">
-			<div class="sidebar">ページクラスとアクションクラスを併用することもできます．</div>
-			<p>Teeda Extensionは，ページモデルに基づくプレゼンテーションフレームワークです．</p>
+		<section name="Abstracts">
+			<div class="sidebar">You can use both Page class and Action class (e.g. Logic class, Service class)</div>
+			<p>Teeda Extension is presentation framework based on Page model.</p>
 			<p>
-				ページを構成するのは，静的なテンプレートとなるHTMLと， 動的な情報を持つページクラスです．
-				テンプレートHTMLとページクラスは1対1に対応します．
+				A page is consisted of a static template HTML and a Page class that has dynamic information.
+				The template HTML and the page class is one by one.
 			</p>
 			<img src="../../images/extension/concept/page1.png"
-				width="466" height="183" alt="ページモデル" />
+				width="466" height="183" alt="Page model" />
 		</section>
 
-		<section name="テンプレートHTML">
-			<p>Teeda Extensionは，ビューにJSPではなくHTML (正確にはXHTML) を使用します．</p>
+		<section name="Template HTML">
+			<p>Teeda Extension uses HTML (XHTML, correctly) not JSP.</p>
 			<p>
+<!--
 				テンプレートHTMLは， ブラウザに向けてレンダリングされるHTMLのひな形で，
 				主にid属性を使用して実行時に置き換える部分を示します．
+-->
+				The template HTML is the template for Web browsers,
+				showing dynamic properties by using id attributes mainly.
 			</p>
-			<h5>テンプレートHTMLの例</h5>
+			<h5>Template HTML example.</h5>
 			<source><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -78,47 +86,51 @@
 </html>
 ]]></source>
 			<p>
-				上のテンプレートHTMLの例では，
+				In above template HTML, 
 				<code>&lt;span&gt;</code>
-				要素に
-				<code>"name"</code>
-				というidが付けられています．
+				element has id named as 
+				<code>"name"</code>.
 			</p>
 		</section>
 
-		<section name="ページクラス">
-			<p>ページクラスはテンプレートHTMLに対応する情報を保持するクラスです．</p>
+		<section name="Page class">
+			<p>Page class has information for template HTML.</p>
 			<p>
+<!--
 				ページクラスはPOJO(Plain Old Java Object)であり，
 				特定のクラスを継承したり，インタフェースを実装したりする必要はありません．
+-->
+				Page class is POJO(Plain Old Java Object), you don't have to extend specific class or implement specific interface.
 			</p>
 			<p>
-				ページクラスは動的な情報をプロパティに保持します．
+<!--				ページクラスは動的な情報をプロパティに保持します．
 				getter/setterメソッドを使うJavaBeans流のプロパティだけでなく，
-				publicフィールドもプロパティとして利用可能です．
+				publicフィールドもプロパティとして利用可能です．-->
+				Page class sets dynamic information into its properties.
+				Not only getter/setter property, but also public field of the Page class is available.
 			</p>
-			<h5>ページクラスの例</h5>
+			<h5>Example of Page class</h5>
 			<source><![CDATA[
 public class HelloPage {
     public String name ="ABC";
 }
 ]]></source>
 			<p>
-				上のページクラスの例では，
+				Above page class defines
 				<code>name</code>
-				というプロパティが定義されています．
+				 property.
 			</p>
 		</section>
 
-		<section name="レンダリング">
+		<section name="Rendering">
 			<p>
-				実行時， テンプレートHTMLの動的な部分は対応するページクラスのプロパティで置き換えられて，
-				ブラウザに向けてレンダリングされます．
+				When showing the pages, the dynamic parts of template HTML are replaced with the properties of Page class
+				and rendered for Web browsers.
 			</p>
 			<img src="../../images/extension/concept/page2.png"
-				width="466" height="391" alt="レンダリング" />
+				width="466" height="391" alt="Rendering" />
 			<p>
-				上のテンプレートHTMLの例にページクラスの例が適用されると，レンダリングされるHTMLは次のようになります．
+				After the dynamic part of the template HTML above is replaced with the property of the page class, it will be rendered as below.
 			</p>
 			<source><![CDATA[
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,45 +146,56 @@ public class HelloPage {
 </html>
 ]]></source>
 			<p>
-				テンプレートHTMLのid属性とページクラスのプロパティは規約によって結びつけられるため，
-				明示的に指定をする必要はありません．
+<!--				テンプレートHTMLのid属性とページクラスのプロパティは規約によって結びつけられるため，
+				明示的に指定をする必要はありません．-->
+				The id attributes of template HTML and properties of Page class are linked by the convention,
+				you don't have to write configuration.
 			</p>
 		</section>
 
-		<section name="ポストバック">
+		<section name="Post back">
 			<p>
-				テンプレートHTMLは
+				Template HTML can have
+				<code>&lt;form&gt;</code>.
+				On Teeda Extension, when 
 				<code>&lt;form&gt;</code>
-				を持つことが出来ます． TeedaExtensionでは，
-				<code>&lt;form&gt;</code>
-				をサブミットした場合の宛先 (action) は， 常に表示されているそのページ自身となります．
+				is submitted, the target(action) is always the page itself.
 			</p>
 			<img src="../../images/extension/concept/page3.png"
-				width="466" height="429" alt="ポストバック" />
+				width="466" height="429" alt="Post back" />
 			<p>
-				このように，
+				As like this, it is called
+				<strong>Post back</strong> that the page is shown again after
 				<code>&lt;form&gt;</code>
-				がサブミットされてページが呼び戻されることを「
-				<strong>ポストバック</strong>
-				」と呼びます．
+				is submitted.
 			</p>
 			<div class="caution">
-				<div>注意点</div>
+				<div>Caution</div>
 				<p>
+<!--
 					Teeda Extensionでは，HTTPプロトコルのPOSTメソッドはポストバックでのみ使用します．
 					また，ポストバックは常にPOSTメソッドを使用します．
+-->
+					On Teeda Extension, HTTP protocol's POST method is only used by Post back.
+					And Post back always uses POST method.
 				</p>
 			</div>
 		</section>
 
-		<section name="サブアプリケーション">
-			<p>同じディレクトリ (パッケージ) のページは一つの「サブアプリケーション」を構成します．</p>
+		<section name="Sub application">
+			<p>"Sub application" consists of the pages under same directory(package).</p>
 			<p>
+<!--
 				入力画面・確認画面・完了画面のように，
 				一連のインタラクションを構成する複数のページを同じサブアプリケーションに含めることにより，
 				状態の引継ぎが容易になります． 詳細は「
 				<a href="scope.html">状態とスコープ</a>
 				」を参照してください．
+-->
+				By including some pages that carry out series of an interaction(e.g. Input view, confirm input view, finish view),
+				taking over the states can be easy. Detail is in
+				<a href="scope.html">State and scope</a>
+				.
 			</p>
 		</section>
 
