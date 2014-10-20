@@ -199,61 +199,62 @@ public class HelloPage {
 			</p>
 		</section>
 
-		<section name="命名規約">
+		<section name="Naming convention">
 			<div class="sidebar">
-				SMART deployの詳細はSeasar2の
+				About SMART deploy, refer Seasar2's
 				<a
 					href="http://s2container.seasar.org/2.4/ja/DIContainer.html">
-					「DIContainer」
+					"DIContainer"
 				</a>
 				－
 				<a
 					href="http://s2container.seasar.org/2.4/ja/DIContainer.html#SMARTdeploy">
-					「SAMRT deploy」
+					"SAMRT deploy"
 				</a>
-				を参照してください．
 			</div>
 			<p>
-				Teeda Extensionは，
+				Teeda Extension is based on
 				<a href="http://s2container.seasar.org/2.4/ja/">
 					Seasar2
 				</a>
-				のSMART deployに準拠しています．
+				's SMART deploy
 			</p>
 			<p>
-				テンプレートHTML及びページクラスをSMART deployの規約に従って配置することで，
-				面倒な設定が不要となっています．
+<!--				テンプレートHTML及びページクラスをSMART deployの規約に従って配置することで，
+				面倒な設定が不要となっています．-->
+				By deploying template HTML and Page class based on the convention of SMART deploy,
+				bothering configuration is unnecessary.
 			</p>
 
-			<subsection name="テンプレートHTMLの命名規約">
+			<subsection name="Naming convention of Template HTML">
 				<p>
-					テンプレートHTMLは，
-					<var>ビュールート</var>
-					ディレクトリの下に， サブアプリケーション単位のサブディレクトリを作成して配置します． デフォルトの
-					<var>ビュールート</var>
-					ディレクトリは
+					Template HTML is deployed under sub application's directory under
+					<var>view root</var>
+					directory. Default
+					<var>view root</var>
+					directory is
 					<code>/view</code>
-					です．
+					.
 				</p>
 				<p>
-					テンプレートHTMLは先頭を英小文字とします． デフォルトの拡張子は
+					First character of name of Template HTML has to be small capital. Default extension is
 					<code>.html</code>
-					です．
+					.
 				</p>
-				<p>以下はテンプレートHTMLのパスの例です．</p>
+				<p>Below is example of Template HTML's path</p>
 				<source><![CDATA[
 /view/hello/hello.html
 ]]></source>
-				<p>このページにアクセスするURLは次のようになります．</p>
+				<p>URL for accesing this URL is below.</p>
 				<source><![CDATA[
 http://localhost:8080/teeda-html-example/view/hello/hello.html
 ]]></source>
 				<div class="caution">
-					<div>注意点</div>
+					<div>Caution</div>
 					<p>
-						HTMLファイル名にアンダースコア (
+						You can't include
 						<code>'_'</code>
-						) を含めることはできません．
+						in HTML file name.
 					</p>
 				</div>
 			</subsection>
