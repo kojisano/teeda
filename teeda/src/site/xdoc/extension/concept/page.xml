@@ -222,7 +222,7 @@ public class HelloPage {
 			<p>
 <!--				テンプレートHTML及びページクラスをSMART deployの規約に従って配置することで，
 				面倒な設定が不要となっています．-->
-				By deploying template HTML and Page class based on the convention of SMART deploy,
+				By deploying template HTML and Page class according to convention of SMART deploy,
 				bothering configuration is unnecessary.
 			</p>
 
@@ -259,59 +259,54 @@ http://localhost:8080/teeda-html-example/view/hello/hello.html
 				</div>
 			</subsection>
 
-			<subsection name="ページクラスの命名規約">
+			<subsection name="Naming convention of Page class">
 				<p>
-					ページクラスは，
-					&lt;ルートパッケージ&gt;.&lt;サブアプリケーションルートパッケージ&gt;の下に，
-					サブアプリケーション単位のサブパッケージを作成して配置します． デフォルトの
-					&lt;サブアプリケーションルートパッケージ&gt;は
-					<code>web</code>
-					です．
+					Page class is deployed in sub package for each sub application under
+					&lt;root package&gt;.&lt;sub application root package&gt;
+					Default 
+					&lt;sub application root package&gt;is
+					<code>web</code>.
 				</p>
 				<p>
-					ページクラスの名前は，テンプレートHTMLファイルの名前の先頭を大文字にし，
-					拡張子を取り除いて接尾辞を付加したものにします． デフォルトの接尾辞は
-					<code>Page</code>
-					です．
+					Name of page class should be that changing first character of file name of Template HTML
+                                        into small capital, removing extension(*.html) and add suffix.
+                                        Default suffix is 
+					<code>Page</code>.
 				</p>
 				<p>
-					以下は，
-					<code>/view/hello/hello.html</code>
-					に対応するページクラスの例です．
+					Below is example about Page class of
+					<code>/view/hello/hello.html</code>.
 				</p>
 				<source><![CDATA[
 examples.teeda.web.hello.HelloPage
 ]]></source>
 				<p>
-					この例では，
-					<code>examples.teeda</code>
-					がルートパッケージです．
+					In this example, root package is
+					<code>examples.teeda</code>.
 				</p>
 				<div class="caution">
-					<div>注意点</div>
+					<div>Caution</div>
 					<p>
-						ページクラス名にアンダースコア (
+						You can't include
 						<code>'_'</code>
-						) を含めることはできません．
+						in name of Page class.
 					</p>
 				</div>
 			</subsection>
 
-			<subsection name="ページ名の命名規約">
+			<subsection name="Naming convention of page name">
 				<p>
-					ページを表す名前は，
-					<var>ビュールート</var>
-					ディレクトリを基点として，
-					サブアプリケーション単位のサブディレクトリとページクラスの名前をアンダースコア
+					The name(S2 component name) is that based on
+					<var>view root</var>
+					directory,
+					connecting sub directory name (for sub application) and page class name using 
 					<code>'_'</code>
-					でつなげたものです．
-					ただし，サブディレクトリおよびページクラスはJavaBeansにおけるプロパティの規約に従い，
-					先頭を小文字にします (先頭の文字と2文字目がともに大文字の場合はそのまま)．
+					.
+					According to the convention of JavaBeans, 1st charactor of sub directoy part and page class part should be small character.
 				</p>
 				<p>
-					以下は，
-					<code>/view/hello/hello.html</code>
-					に対応するページ名の例です．
+					Below is example page name for
+					<code>/view/hello/hello.html</code>.
 				</p>
 				<source><![CDATA[
 hello_helloPage
