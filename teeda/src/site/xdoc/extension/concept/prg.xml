@@ -4,81 +4,76 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念 - PRGパターン</title>
+		<title>Extension - Concept - PRG Pattern</title>
 	</properties>
 	<body>
-		<section name="PRGパターン">
+		<section name="PRG Pattern">
 			<ul>
 				<li>
-					<a href="#概要">概要</a>
+					<a href="#Abstracts">Abstracts</a>
 				</li>
 				<li>
-					<a href="#URLのズレ">URLのズレ</a>
+					<a href="#URL difference">URL difference</a>
 				</li>
 				<li>
-					<a href="#PRGパターンの場合">PRGパターンの場合</a>
+					<a href="#PRG Pattern">PRG Pattern</a>
 				</li>
 				<li>
-					<a href="#自画面表示の場合">自画面表示の場合</a>
+					<a href="#Showing self view">Showing self view</a>
 				</li>
 			</ul>
 		</section>
 
-		<section name="概要">
+		<section name="Abstracts">
 			<p>
-				Teeda Extensionは， 画面遷移にPRG (POST-REDIRECT-GET)
-				パターンを採用しています．
+				Teeda Extension adopts PRG (POST-REDIRECT-GET) Pattern for view transition.
 			</p>
 			<p>
-				PRGパターンとは， POSTメソッドによるリクエストに対してリダイレクトを返し，
-				GETメソッドの応答として遷移先の画面を表示するというものです．
+				PRG Pattern is that returning REDIRECT for requset of POST method,
+				and showing the view of destination as response for GET method.
 			</p>
 		</section>
 
-		<section name="URLのズレ">
+		<section name="URL differencer">
 			<p>
-				ページモデルを採用した場合， 画面遷移の際にブラウザのアドレスバーに表示されるURLと，
-				実際に表示されている内容がずれる場合があります．
+				There is possibility to show contents that is different from URL in address bar of Web browser
+                                when using page mode.
 			</p>
-			<p>以下の例では，aaa.htmlのフォームをサブミットしてbbb.htmlに画面遷移します．</p>
+			<p>The example below showing transition to bbb.html by submitting form of aaa.html</p>
 			<img src="../../images/extension/concept/prg1.png" width="466"
-				height="373" alt="URLのズレ" />
+				height="373" alt="URL difference" />
 			<p>
-				aaa.htmlに対応するAaaPageから， bbb.htmlに対応するBbbPageに (Servlet
-				APIの)
-				forwardで画面遷移すると，ブラウザのアドレスバーにはリクエストしたURLであるaaa.htmlが表示されたままですが，
-				表示されている内容はbbb.htmlとなります．
+				The transition from AaaPage of aaa.html to BbbPage of bbb.html by forward of Servlet API
+                                shows URL aaa.html in address bar of web browser and contents of bbb.html.
 			</p>
 		</section>
 
-		<section name="PRGパターンの場合">
+		<section name="PRG Pattern">
 			<p>
-				Teedaでは，PRGパターンを採用することにより，
-				画面遷移しても画面遷移の際にブラウザのアドレスバーに表示されるURLと，
-				実際に表示されている内容がずれないようにしています．
+				Teeda adopts RPG pattern for making the contents that web browser shows not to be different
+                                from URL in address bar of web browser.
 			</p>
-			<p>以下の例では，aaa.htmlのフォームをサブミットしてbbb.htmlに画面遷移します．</p>
+			<p>The example below shows transition from aaa.html to bbb.html by submitting form of aaa.html</p>
 			<img src="../../images/extension/concept/prg2.png" width="466"
-				height="448" alt="PRGパターンの場合" />
+				height="448" alt="PRG Pattern" />
 			<p>
-				aaa.htmlに対応するAaaPageは， bbb.htmlへのリダイレクトをレスポンスとして返します．
-				そのため，ブラウザはbbb.htmlをGETメソッドで要求し，その結果としてbbb.htmlが表示されます．
-				ブラウザのアドレスバーはリダイレクト先であるbbb.htmlとなるため， 表示内容とのズレが発生しません．
+				AaaPage of aaa.html returns REDIRECT to bbb.html as RESPONSE.
+				So web browser requests bbb.html by GET method and shows bbb.html.
+				The address bar of the web browser shows bbb.html that is destination of the REDIRECT, so there is no difference between URL and contents that is shown.
 			</p>
 			<p>
-				また，PRGパターンで表示される画面はGETリクエストの結果であるため，
-				通常ブラウザは画面をキャッシュすることが可能です． このため， 「戻る」「進む」ボタンが有効であり，
-				意図しない二重サブミットを防ぐことができます．
+				Furthermore, because the contents that are shown by RPG Pattern is the result of GET REQUEST,
+				web browser can cache the view. So "Back" and "Forward" buttons are available, it can prevent unintentional double submit.
 			</p>
 		</section>
 
-		<section name="自画面表示の場合">
+		<section name="Showing self view">
 			<p>
-				PRGパターンが使われるのは， 他の画面に遷移する場合だけです．
-				ポストバックされた画面がもう一度同じ画面を表示する場合はPRGパターンを使わず， 直接レスポンスを返します．
+				Teeda uses RPG pattern only when transition to other Page.
+				If POST BACK shows same page again, Teeda doesn't use RPG pattern, just returns RESPONSE.
 			</p>
 			<img src="../../images/extension/concept/prg3.png" width="466"
-				height="380" alt="次画面表示の場合" />
+				height="380" alt="Showing self view" />
 		</section>
 	</body>
 </document>
