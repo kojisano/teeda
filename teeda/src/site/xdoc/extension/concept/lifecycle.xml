@@ -4,67 +4,67 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念 - ライフサイクル</title>
+		<title>Extension - Concept - Life cycle</title>
 	</properties>
 	<body>
-		<section name="ライフサイクル">
+		<section name="Life cylce">
 			<ul>
 				<li>
-					<a href="#概要">概要</a>
+					<a href="#Abstracts">Abstracts</a>
 				</li>
 				<li>
-					<a href="#ライフサイクルメソッド">ライフサイクルメソッド</a>
+					<a href="#Life cycle method">Life cycle method</a>
 					<ul>
 						<li>
-							<a href="#initializeメソッド">
-								initialize()メソッド
+							<a href="#initialize method">
+								initialize() method
 							</a>
 						</li>
 						<li>
-							<a href="#doメソッド">do～()メソッド</a>
+							<a href="#do method">do～()method</a>
 						</li>
 						<li>
-							<a href="#prerenderメソッド">prerender()メソッド</a>
+							<a href="#prerender method">prerender() method</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="#リクエストパターン">リクエストパターン</a>
+					<a href="#Request pattern">Request pattern</a>
 				</li>
 				<li>
-					<a href="#リクエストパターンとライフサイクルメソッド">
-						リクエストパターンとライフサイクルメソッド
+					<a href="#Request pattern and Life cycle method">
+						Request pattern and Life cycle method
 					</a>
 					<ul>
 						<li>
-							<a href="#初期表示">初期表示</a>
+							<a href="#Initial view">Initial view</a>
 						</li>
 						<li>
-							<a href="#ポストバック_自画面表示">ポストバック (自画面表示)</a>
+							<a href="#Post back_show self view">Post back (show self view)</a>
 						</li>
 						<li>
-							<a href="#ポストバック_リダイレクト">ポストバック (リダイレクト)</a>
+							<a href="#Post back_Redirect">Post back (Redirect)</a>
 						</li>
 						<li>
-							<a href="#リダイレクト表示">リダイレクト表示</a>
+							<a href="#Redirect show">Redirect show</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="#画面遷移">画面遷移</a>
+					<a href="#View transition">View transition</a>
 				</li>
 				<li>
-					<a href="#JSFライフサイクルとの関係">JSFライフサイクルとの関係</a>
+					<a href="#Relation with JSF Life cycle">Relation with JSF Life cycle</a>
 				</li>
 			</ul>
 		</section>
 
-		<section name="概要">
+		<section name="Abstracts">
 			<p>
-				Teeda Extensionは， ブラウザからのリクエストに応じてページクラスのメソッドを呼び出します．
-				このメソッドをライフサイクルメソッドと呼びます．
+				Teeda Extension calls methods of the page class according to REQUEST from web browser.
+				This method is called as Life cycle method.
 			</p>
-			<p>ライフサイクルメソッドには次のものがあります．</p>
+			<p>Life cycle methods are below:</p>
 			<ul>
 				<li>
 					<code>initialize()</code>
@@ -78,36 +78,36 @@
 			</ul>
 		</section>
 
-		<section name="ライフサイクルメソッド">
-			<subsection name="initializeメソッド">
+		<section name="Life cycle method">
+			<subsection name="initialize method">
 				<p>
 					<code>initialize()</code>
-					メソッドは， 画面が最初に表示されるときや， 他の画面から遷移 (REDIRECT)
-					してきたときに呼び出されるメソッドです．
+					 method is called when the Page is shown at the start,
+or when transit(REDIRECT) of other Page to the Page.
 				</p>
 				<p>
 					<code>initialize()</code>
-					メソッドは次の規約に従います．
+					 method follows the conventions below:
 				</p>
 				<dl>
-					<dt>可視性</dt>
+					<dt>Visibility</dt>
 					<dd>
 						<code>public</code>
 					</dd>
-					<dt>メソッド名</dt>
+					<dt> method name</dt>
 					<dd>
 						<code>initialize</code>
 					</dd>
-					<dt>引数</dt>
-					<dd>なし</dd>
-					<dt>戻り値型</dt>
+					<dt>Arguments</dt>
+					<dd>NONE</dd>
+					<dt>Return value type</dt>
 					<dd>
 						<code>Class</code>
-						，
+						or
 						<code>String</code>
-						または
+						or
 						<code>void</code>
-						のいずれか
+						.
 					</dd>
 				</dl>
 				<source><![CDATA[
@@ -117,43 +117,44 @@ public Class initialize() {
 ]]></source>
 				<p>
 					<code>initialize()</code>
-					メソッドは，
-					<a href="page.html#ポストバック">ポストバック</a>
-					では呼び出されません．
+					 method is not called when
+					<a href="page.html#Post back">Post back</a>
+					.
 				</p>
 			</subsection>
 
-			<subsection name="do～()メソッド">
+			<subsection name="do～() method">
 				<p>
 					<code>do～()</code>
-					メソッドは， フォームがサブミットされた場合 (
-					<a href="page.html#ポストバック">ポストバック</a>
-					) に呼び出されるメソッドです．
+					 method is called when a form is submitted(
+					<a href="page.html#Post back">Post back</a>
+					).
 				</p>
 				<p>
 					<code>do～()</code>
-					メソッドは次の規約に従います．
+					 method follows the conventions below:
 				</p>
 				<dl>
-					<dt>可視性</dt>
+					<dt>Visibility</dt>
 					<dd>
 						<code>public</code>
 					</dd>
-					<dt>メソッド名</dt>
+					<dt> method name</dt>
 					<dd>
+                                                Start from 
 						<code>do</code>
-						で始まる
+						.
 					</dd>
-					<dt>引数</dt>
-					<dd>なし</dd>
-					<dt>戻り値型</dt>
+					<dt>Arguments</dt>
+					<dd>NONE</dd>
+					<dt>Return value type</dt>
 					<dd>
 						<code>Class</code>
-						，
+						or
 						<code>String</code>
-						または
+						or
 						<code>void</code>
-						のいずれか
+						.
 					</dd>
 				</dl>
 				<source><![CDATA[
@@ -163,47 +164,49 @@ public Class doUpdate() {
 ]]></source>
 				<p>
 					<code>do～()</code>
-					メソッドは， サブミットボタンに対応付けられ， 対応するボタンが押された場合のみ呼び出されます (
+					 method is linked with submit button and only called when related button is pushed.
+<!--
+(
 					<a href="">詳細</a>
-					)．
+					)．-->
 				</p>
 				<source><![CDATA[
-<input type="submit" id="doUpdate" value="更新" />
+<input type="submit" id="doUpdate" value="Update!" />
 ]]></source>
 				<p>
 					<code>do～()</code>
-					メソッドは， ポストバックでない場合や， バリデーションでエラーがあった場合は呼び出されません．
+					 method is not called when the case is not Post back, or there are errors in Validation.
 				</p>
 			</subsection>
 
-			<subsection name="prerender()メソッド">
+			<subsection name="prerender() method">
 				<p>
 					<code>prerender()</code>
-					メソッドは， 画面が描画される直前に呼び出されるメソッドです．
+					 method is called right a view is rendered.
 				</p>
 				<p>
 					<code>prerender()</code>
-					メソッドは次の規約に従います．
+					 method follows the conventions below:
 				</p>
 				<dl>
-					<dt>可視性</dt>
+					<dt>Visibility</dt>
 					<dd>
 						<code>public</code>
 					</dd>
-					<dt>メソッド名</dt>
+					<dt> method name</dt>
 					<dd>
 						<code>prerender</code>
 					</dd>
-					<dt>引数</dt>
-					<dd>なし</dd>
-					<dt>戻り値型</dt>
+					<dt>Argument</dt>
+					<dd>NONE</dd>
+					<dt>Return value type</dt>
 					<dd>
 						<code>Class</code>
-						，
+						or
 						<code>String</code>
-						または
+						or
 						<code>void</code>
-						のいずれか
+						.
 					</dd>
 				</dl>
 				<source><![CDATA[
@@ -213,109 +216,106 @@ public Class prerender() {
 ]]></source>
 				<p>
 					<code>prerender()</code>
-					メソッドは， 画面遷移 (リダイレクト) する場合は呼び出されません．
+					 method is not called when Redirect to other page.
 				</p>
 			</subsection>
 		</section>
 
-		<section name="リクエストパターン">
+		<section name="Request pattern">
 			<p>
-				Teeda Extensionでは， ブラウザから受け取ったリクエストの基本的な処理パターンが4つあります．
+				Teeda Extension has 4 basic patterns for processing request from web browser.
 			</p>
 			<img src="../../images/extension/concept/lifecycle1.png"
-				width="616" height="637" alt="リクエストパターン" />
+				width="616" height="637" alt="Request pattern" />
 			<dl>
-				<dt>初期表示</dt>
-				<dd>ブックマークやリンクがクリックされたことによるリクエストです．</dd>
-				<dt>ポストバック (自画面表示)</dt>
+				<dt>Initial view</dt>
+				<dd>Request by clicking Book mark or link.</dd>
+				<dt>Post back (Show self view)</dt>
 				<dd>
-					表示している画面のフォームがサブミットされたことによるリクエストです．
-					画面遷移せずに同じ画面を表示します．
+					Request by submit of form in View that is shown now.
+					It shows same view without view transition.
 				</dd>
-				<dt>ポストバック (リダイレクト)</dt>
+				<dt>Post back (Redirect)</dt>
 				<dd>
-					表示している画面のフォームがサブミットされたことによるリクエストです．
-					do～()メソッドの戻り値で指定された画面に遷移 (リダイレクト) します．
+					Request by submit of form in View that is shown now.
+					It Redirect to Page that is defined by return value of do～() method.
 				</dd>
-				<dt>リダイレクト表示</dt>
-				<dd>リダイレクトによるリクエストです．</dd>
+				<dt>Redirect</dt>
+				<dd>Request by Redirect.</dd>
 			</dl>
 		</section>
 
-		<section name="リクエストパターンとライフサイクルメソッド">
+		<section name="Request pattern and Life cycle method">
 			<p>
-				<a href="#リクエストパターン">リクエストパターン</a>
-				ごとに， どのライフサイクルメソッドが呼び出されるかを説明します．
+				Here describes which Life cycle method is called For each<a href="#Request pattern">Request pattern</a>.
 			</p>
 
-			<subsection name="初期表示">
+			<subsection name="Initial view">
 				<p>
-					初期表示では，
+					In Initial view,
 					<code>initialize()</code>
-					および
+					and
 					<code>prerender()</code>
-					メソッドが呼び出されます．
+					 method is called.
 				</p>
 				<img src="../../images/extension/concept/lifecycle2.png"
-					width="466" height="278" alt="初期表示" />
+					width="466" height="278" alt="Initial view" />
 			</subsection>
 
-			<subsection name="ポストバック (自画面表示)">
+			<subsection name="Post back (Show self view)">
 				<p>
-					ポストバック (自画面表示) では，
+					In Post back (Show self view),
 					<code>do～()</code>
-					メソッドおよび
+					 method and
 					<code>prerender()</code>
-					メソッドが呼び出されます．
+					 method is called.
 				</p>
 				<img src="../../images/extension/concept/lifecycle3.png"
-					width="466" height="259" alt="ポストバック (自画面表示)" />
+					width="466" height="259" alt="Post back (Show self view)" />
 				<p>
-					バリデーションでエラーがあった場合は
+					If there are errors in Validation, only
 					<code>prerender()</code>
-					メソッドだけが呼び出されます．
+					 method is called.
 				</p>
 			</subsection>
 
-			<subsection name="ポストバック (リダイレクト)">
+			<subsection name="Post back (Redirect)">
 				<p>
-					ポストバック (リダイレクト) では，
+					In Post back (Redirect), only
 					<code>do～()</code>
-					メソッドのみが呼び出されます．
-					<code>do～()</code>
-					メソッドの戻り値で指定された画面へリダイレクトします．
+					 method is called.
+					Redirect to Page according to return value of <code>do～()</code>
+					 method.
 				</p>
 				<img src="../../images/extension/concept/lifecycle4.png"
-					width="466" height="231" alt="ポストバック (リダイレクト)" />
+					width="466" height="231" alt="Post back (Redirect)" />
 				<p>
-					バリデーションでエラーがあった場合は
-					<a href="#ポストバック_自画面表示">ポストバック(自画面表示)</a>
-					になります．
+					If there are validation error, it will be
+					<a href="#Post back_show self view">Post back(Show self view)</a>
+					.
 				</p>
 			</subsection>
 
-			<subsection name="リダイレクト表示">
+			<subsection name="Redirect show">
 				<p>
-					リダイレクト表示では，
+					In Redirect show,
 					<code>initialize()</code>
-					および
+					and
 					<code>prerender()</code>
-					メソッドが呼び出されます．
+					 method is called.
 				</p>
 				<img src="../../images/extension/concept/lifecycle5.png"
-					width="466" height="259" alt="リダイレクト表示" />
+					width="466" height="259" alt="Redirect show" />
 			</subsection>
 		</section>
 
-		<section name="画面遷移">
+		<section name="View transition">
 			<p>
-				ライフサイクルメソッドは，戻り値型を
+				Return type of Life cycle method can be
 				<code>Class</code>
-				または
+				or
 				<code>String</code>
-				型にすることができます (間違いにくさやリファクタリングのしやすさから
-				<code>Class</code>
-				型を推奨します)．
+				. We recommend that return type should be <code>Class</code> type because it is easy for refactoring.
 			</p>
 			<source><![CDATA[
 public class FooPage {
@@ -327,17 +327,15 @@ public class FooPage {
 }
 ]]></source>
 			<p>
-				次画面のページクラスまたはそのコンポーネント名を戻り値とすることで， その画面に遷移 (リダイレクト) します．
+				By defining return value as the Page class or S2 component name, it Redirects(Page transition) to the Page.
 			</p>
 			<p>
-				戻り値が
+				If the return value is
 				<code>null</code>
-				だと画面遷移 (リダイレクト) しないで直接自画面を表示します．
+				, it doesn't Redirect(Page transition) just show self View.
 			</p>
 			<p>
-				戻り値をそのページクラス自身 (またはそのコンポーネント名) にすると，
-				リダイレクトして同じページを表示します． この場合は遷移先が現在の画面と同じというだけで，
-				画面遷移として扱われます．
+				If the return is the Page class(or S2 component name) itself, it Redirects to same Page. In this case, it is treated as Page transiton to same Page.
 			</p>
 			<source><![CDATA[
 public class FooPage {
@@ -349,9 +347,9 @@ public class FooPage {
 }
 ]]></source>
 			<p>
-				画面遷移 (リダイレクト) しない場合は戻り値の型を
+				If it doesn't Redirect(Page transition), the return type can be
 				<code>void</code>
-				にすることもできます．
+				.
 			</p>
 			<source><![CDATA[
 public class FooPage {
@@ -363,14 +361,12 @@ public class FooPage {
 ]]></source>
 		</section>
 
-		<section name="JSFライフサイクルとの関係">
+		<section name="Relation with JSF Life cycle">
 			<p>
-				JSFのライフサイクルと，
-				ページクラスのライフサイクルメソッドおよびsetter/getterメソッド呼び出しの関係は，
-				以下のようになります．
+				The relation between JSF Life cycle and Life cycle method, setter/getter method of Page class are below:
 			</p>
 			<img src="../../images/extension/concept/lifecycle6.png"
-				width="609" height="530" alt="JSFライフサイクルとの関係" />
+				width="609" height="530" alt="Relation with JSF Life cycle" />
 		</section>
 	</body>
 </document>
