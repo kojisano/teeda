@@ -4,40 +4,40 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念 - 状態とスコープ</title>
+		<title>Extension - Concept - State and scope</title>
 	</properties>
 	<body>
-		<section name="状態とスコープ">
+		<section name="State and scope">
 			<ul>
 				<li>
-					<a href="#状態の引継ぎ">状態の引継ぎ</a>
+					<a href="#Take state over">Take state over</a>
 				</li>
 				<li>
-					<a href="#スコープ">スコープ</a>
+					<a href="#Scope">Scope</a>
 					<ul>
 						<li>
-							<a href="#ページスコープ">ページスコープ</a>
+							<a href="#Page scope">Page scope</a>
 						</li>
 						<li>
-							<a href="#リダイレクトスコープ">リダイレクトスコープ</a>
+							<a href="#Redirect scope">Redirect scope</a>
 						</li>
 						<li>
-							<a href="#サブアプリケーションスコープ">サブアプリケーションスコープ</a>
+							<a href="#Sub-application scope">Sub-application scope</a>
 						</li>
 						<li>
-							<a href="#デフォルトスコープ">デフォルトスコープ</a>
+							<a href="#Default scope">Default scope</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="#引継ぎの制御">引継ぎの制御</a>
+					<a href="#Control taking over">Control taking over</a>
 					<ul>
 						<li>
-							<a href="#doFinishメソッド">doFinish～()メソッド</a>
+							<a href="#doFinish method">doFinish～() method</a>
 						</li>
 						<li>
-							<a href="#TakeOverアノテーション">
-								TakeOverアノテーション
+							<a href="#TakeOver annotation">
+								TakeOver annotation
 							</a>
 						</li>
 					</ul>
@@ -45,39 +45,35 @@
 			</ul>
 		</section>
 
-		<section name="状態の引継ぎ">
+		<section name="Take state over">
 			<p>
-				Teeda Extensionは
-				<a href="prg.html">PRGパターン</a>
-				で画面遷移します． 通常， 画面遷移の際はページクラスの間で状態 (プロパティの値) を引き継ぐ必要があります．
+				Teeda Extension transits view using
+				<a href="prg.html">PRG Pattern</a>
+				. Usually, it needs to take state(the value of properties) when transit view.
 			</p>
 			<img src="../../images/extension/concept/scope1.png" width="492"
-				height="466" alt="状態の引継ぎ" />
+				height="466" alt="Take state over" />
 			<p>
-				リダイレクト表示のリクエストではURLの長さ制限もあるため，
-				リクエストパラメータを使用するのは現実的ではありません． そこでHTTPセッションを使用することになりますが，
-				HTTPセッション (メモリ) の使用量を抑えるために有効期間に注意する必要があります．
+				It is not practical to use request parameter because URL has limitation for the length when redirect request. So we use HTTP session, but we have to take care of the life time of the session to save memory cost.
 			</p>
 			<p>
-				Teeda Extensionでは， 多くのアプリケーションで必要になる複数の有効期間 (スコープ)
-				を持つ状態の引継ぎをサポートします． この機能により， アプリケーションがHTTPセッションを直接扱うことなく，
-				簡単かつ安全にページクラス間で状態を引き継げるようにしています．
+				Teeda Extension supports to take state over way which has several scope terms. By this function, Application doesn't have to use HTTP session directly, make it possible to take state over Page classes safely and easily. 
 			</p>
 		</section>
 
-		<section name="スコープ">
+		<section name="Scope">
 			<p>Teeda Extensionは次のスコープで状態を管理します．</p>
 			<dl>
 				<dt>
-					<a href="#ページスコープ">ページスコープ</a>
+					<a href="#Page scope">Page scope</a>
 				</dt>
 				<dd>同じページを表示している間， 状態を維持するスコープです．</dd>
 				<dt>
-					<a href="#リダイレクトスコープ">リダイレクトスコープ</a>
+					<a href="#Redirect scope">Redirect scope</a>
 				</dt>
 				<dd>リダイレクトの間，状態を維持するスコープです．</dd>
 				<dt>
-					<a href="#サブアプリケーションスコープ">サブアプリケーションスコープ</a>
+					<a href="#Sub-application scope">Sub-application scope</a>
 				</dt>
 				<dd>
 					同じ
@@ -87,22 +83,22 @@
 					内のページを表示している間，状態を維持するスコープです．
 				</dd>
 				<dt>
-					<a href="#デフォルトスコープ">デフォルトスコープ</a>
+					<a href="#Default scope">Default scope</a>
 				</dt>
 				<dd>
-					正しくは独立したスコープではなく， サブアプリケーションスコープを利用して状態を引き継ぐスコープです．
+					正しくは独立したスコープではなく， Sub-application scopeを利用して状態を引き継ぐスコープです．
 				</dd>
 			</dl>
 			<p>
 				次の図は各スコープの有効期間を表しています
-				(デフォルトスコープの有効期間はサブアプリケーションスコープと同じです)．
+				(Default scopeの有効期間はSub-application scopeと同じです)．
 			</p>
 			<img src="../../images/extension/concept/scope2.png" width="586"
 				height="863" alt="スコープの有効期間" />
 
-			<subsection name="ページスコープ">
+			<subsection name="Page scope">
 				<p>
-					ページスコープは，
+					Page scopeは，
 					<a href="lifecycle.html#ポストバック_自画面表示">
 						ポストバック (自画面表示)
 					</a>
@@ -118,7 +114,7 @@
 					で同じページを表示している間維持されるスコープです．
 				</p>
 				<p>
-					ページスコープは，
+					Page scopeは，
 					<a href="lifecycle.html#初期表示">初期表示</a>
 					や
 					<a href="lifecycle.html#リダイレクト表示">
@@ -130,16 +126,16 @@
 					<a href="lifecycle.html#リダイレクト表示">
 						リダイレクト表示
 					</a>
-					で他のページがリクエストされると破棄されて， 新しいページスコープが開始されます．
+					で他のページがリクエストされると破棄されて， 新しいPage scopeが開始されます．
 				</p>
-				<p>ページスコープを使用するには， ページクラスのプロパティにアノテーションで明示的に指定します．</p>
+				<p>Page scopeを使用するには， ページクラスのプロパティに annotationで明示的に指定します．</p>
 				<source><![CDATA[
 @PageScope
 public String name;
 ]]></source>
 				<p>
 					<code>@PageScope</code>
-					が指定されたプロパティは， 画面表示の際にページスコープに含められます．
+					が指定されたプロパティは， 画面表示の際にPage scopeに含められます．
 				</p>
 				<div class="caution">
 					<div>注意点</div>
@@ -147,24 +143,24 @@ public String name;
 						<a href="lifecycle.html#初期表示">
 							初期表示
 						</a>
-						で現在と同じページが表示される場合は， ページスコープは維持されません．
-						新しいページスコープが開始されます．
+						で現在と同じページが表示される場合は， Page scopeは維持されません．
+						新しいPage scopeが開始されます．
 						<a
 							href="lifecycle.html#ポストバック_リダイレクト">
 							ポストバック (リダイレクト)
 						</a>
-						で現在と同じページが表示される場合は， ページスコープは維持されます．
+						で現在と同じページが表示される場合は， Page scopeは維持されます．
 					</p>
 				</div>
 			</subsection>
 
-			<subsection name="リダイレクトスコープ">
+			<subsection name="Redirect scope">
 				<p>
-					リダイレクトスコープは， リダイレクトの間だけ維持されるスコープです．
+					Redirect scopeは， リダイレクトの間だけ維持されるスコープです．
 					入力画面から確認画面に値を引き継ぐ場合などに使うことができます．
 				</p>
 				<p>
-					リダイレクトスコープは，
+					Redirect scopeは，
 					<a
 						href="lifecycle.html#ポストバック_リダイレクト">
 						ポストバック (リダイレクト)
@@ -176,7 +172,7 @@ public String name;
 					後に破棄されます．
 				</p>
 				<p>
-					リダイレクトスコープを使用するには， ページクラスのプロパティにアノテーションで明示的に指定します．
+					Redirect scopeを使用するには， ページクラスのプロパティに annotationで明示的に指定します．
 				</p>
 				<source><![CDATA[
 @RedirectScope
@@ -189,20 +185,20 @@ public String name;
 						href="lifecycle.html#ポストバック_リダイレクト">
 						ポストバック (リダイレクト)
 					</a>
-					の際にリダイレクトスコープに含められます．
+					の際にRedirect scopeに含められます．
 				</p>
 			</subsection>
 
-			<subsection name="サブアプリケーションスコープ">
+			<subsection name="Sub-application scope">
 				<p>
-					サブアプリケーションスコープは， 同じ
+					Sub-application scopeは， 同じ
 					<a href="page.html#サブアプリケーション">
 						サブアプリケーション
 					</a>
 					のページを表示している間維持されるスコープです．
 				</p>
 				<p>
-					サブアプリケーションスコープは，
+					Sub-application scopeは，
 					<a href="lifecycle.html#初期表示">初期表示</a>
 					や
 					<a href="lifecycle.html#リダイレクト表示">
@@ -219,11 +215,11 @@ public String name;
 						リダイレクト表示
 					</a>
 					で他のサブアプリケーションのページが要求されると破棄されて，
-					新しいサブアプリケーションスコープが開始されます．
+					新しいSub-application scopeが開始されます．
 				</p>
 				<p>
-					サブアプリケーションスコープを使用するには，
-					ページクラスのプロパティにアノテーションで明示的に指定します．
+					Sub-application scopeを使用するには，
+					ページクラスのプロパティに annotationで明示的に指定します．
 				</p>
 				<source><![CDATA[
 @SubapplicationScope
@@ -231,41 +227,41 @@ public String name;
 ]]></source>
 				<p>
 					<code>@SubapplicationScope</code>
-					が指定されたプロパティは， 画面表示の際にサブアプリケーションスコープに含められます．
+					が指定されたプロパティは， 画面表示の際にSub-application scopeに含められます．
 				</p>
 			</subsection>
 
-			<subsection name="デフォルトスコープ">
-				<p>デフォルトスコープは，実際にはスコープではなく，サブアプリケーションスコープの一種です．</p>
+			<subsection name="Default scope">
+				<p>Default scopeは，実際にはスコープではなく，Sub-application scopeの一種です．</p>
 				<p>
 					<a
 						href="lifecycle.html#ポストバック_リダイレクト">
 						ポストバック (リダイレクト)
 					</a>
-					の際に，アノテーションが指定されていないプロパティで，
+					の際に， annotationが指定されていないプロパティで，
 					<strong>次画面のページクラスと共通のプロパティ</strong>
-					は， 自動的にサブアプリケーションスコープに含められて次画面に引き継がれます．
-					これがデフォルトスコープです．
+					は， 自動的にSub-application scopeに含められて次画面に引き継がれます．
+					これがDefault scopeです．
 				</p>
 				<p>
-					デフォルトスコープを使用するには，
-					ページクラスのプロパティにスコープのアノテーションを指定する必要はありません．
+					Default scopeを使用するには，
+					ページクラスのプロパティにスコープの annotationを指定する必要はありません．
 				</p>
 				<source><![CDATA[
 public String name;
 ]]></source>
 				<p>
-					デフォルトスコープのプロパティは，
+					Default scopeのプロパティは，
 					<a
 						href="lifecycle.html#ポストバック_リダイレクト">
 						ポストバック (リダイレクト)
 					</a>
-					の際にサブアプリケーションスコープに含められます．
+					の際にSub-application scopeに含められます．
 				</p>
 				<div class="caution">
 					<div>注意点</div>
 					<p>
-						デフォルトスコープのプロパティは，
+						Default scopeのプロパティは，
 						<a href="lifecycle.html#初期表示">
 							初期表示
 						</a>
@@ -274,28 +270,28 @@ public String name;
 							href="lifecycle.html#ポストバック_自画面表示">
 							ポストバック (自画面表示)
 						</a>
-						ではサブアプリケーションスコープに含められません．
-						次画面のページクラスにないプロパティもサブアプリケーションスコープに含められません．
-						これらの点がサブアプリケーションスコープと異なる点です．
+						ではSub-application scopeに含められません．
+						次画面のページクラスにないプロパティもSub-application scopeに含められません．
+						これらの点がSub-application scopeと異なる点です．
 					</p>
 				</div>
 			</subsection>
 		</section>
 
-		<section name="引継ぎの制御">
+		<section name="Control taking over">
 			<p>
 				デフォルトでは， 遷移元ページと遷移先ページで共通のプロパティは
 				<strong>全て</strong>
 				引継ぎの対象となりますが， プロパティの一部または全部を引き継がないようにすることも可能です．
 			</p>
 
-			<subsection name="doFinish～()メソッド">
+			<subsection name="doFinish～() method">
 				<p>
 					サブミットボタンの
 					<code>id</code>
 					属性および対応する
-					<a href="lifecycle.html#ライフサイクルメソッド">
-						ライフサイクルメソッド
+					<a href="lifecycle.html#ライフサイクル method">
+						ライフサイクル method
 					</a>
 					の名前が
 					<code>doFinish</code>
@@ -303,23 +299,23 @@ public String name;
 					<code>doOnceFinish</code>
 					で始まっている場合，
 					<a href="page.html#ポストバック">ポストバック</a>
-					された際にサブアプリケーションスコープ (デフォルトスコープ含む) の内容はクリアされ，
-					遷移先画面に状態は引き継がれなくなります (リダイレクトスコープは引き継がれます)．
+					された際にSub-application scope (Default scope含む) の内容はクリアされ，
+					遷移先画面に状態は引き継がれなくなります (Redirect scopeは引き継がれます)．
 				</p>
 			</subsection>
 
-			<subsection name="TakeOverアノテーション">
+			<subsection name="TakeOver annotation">
 				<p>
-					<a href="lifecycle.html#ライフサイクルメソッド">
-						ライフサイクルメソッド
+					<a href="lifecycle.html#ライフサイクル method">
+						ライフサイクル method
 					</a>
 					に
 					<code>@TakeOver</code>
-					アノテーションを指定することで， 遷移先画面に引き継ぐプロパティをきめ細かく指定することができます．
+					 annotationを指定することで， 遷移先画面に引き継ぐプロパティをきめ細かく指定することができます．
 				</p>
 				<p>
 					<code>@TakeOver</code>
-					アノテーションでは，
+					 annotationでは，
 					<code>type</code>
 					属性でプロパティを引き継ぐ方法を次の3種類から指定します．
 				</p>
@@ -347,7 +343,7 @@ public String name;
 				<ul>
 					<li>
 						<code>doXxx()</code>
-						メソッドは，
+						 methodは，
 						<code>foo</code>
 						および
 						<code>bar</code>
@@ -355,7 +351,7 @@ public String name;
 					</li>
 					<li>
 						<code>doYyy()</code>
-						メソッドは，
+						 methodは，
 						<code>foo</code>
 						および
 						<code>bar</code>
@@ -363,7 +359,7 @@ public String name;
 					</li>
 					<li>
 						<code>doZzz()</code>
-						メソッドは，全てのプロパティを遷移先画面に引き継ぎません．
+						 methodは，全てのプロパティを遷移先画面に引き継ぎません．
 					</li>
 				</ul>
 				<source><![CDATA[
