@@ -62,56 +62,54 @@
 		</section>
 
 		<section name="Scope">
-			<p>Teeda Extensionは次のスコープで状態を管理します．</p>
+			<p>Teeda Extension manages state by various scopes below</p>
 			<dl>
 				<dt>
 					<a href="#Page scope">Page scope</a>
 				</dt>
-				<dd>同じページを表示している間， 状態を維持するスコープです．</dd>
+				<dd>It keeps states while showing same Page.</dd>
 				<dt>
 					<a href="#Redirect scope">Redirect scope</a>
 				</dt>
-				<dd>リダイレクトの間，状態を維持するスコープです．</dd>
+				<dd>It keeps states while redirect to other Page.</dd>
 				<dt>
 					<a href="#Sub-application scope">Sub-application scope</a>
 				</dt>
 				<dd>
-					同じ
-					<a href="page.html#サブアプリケーション">
-						サブアプリケーション
-					</a>
-					内のページを表示している間，状態を維持するスコープです．
+					It keeps states while showing Pages in same
+					<a href="page.html#Sub application">
+						Sub-application
+					</a>.
 				</dd>
 				<dt>
 					<a href="#Default scope">Default scope</a>
 				</dt>
 				<dd>
-					正しくは独立したスコープではなく， Sub-application scopeを利用して状態を引き継ぐスコープです．
+					It is not independent scope but uses Sub-application scope for keeping states.
 				</dd>
 			</dl>
 			<p>
-				次の図は各スコープの有効期間を表しています
-				(Default scopeの有効期間はSub-application scopeと同じです)．
+				The figure below shows life time of the each scopes
+				(life time of Default scope is as same ase Sub-application scope)．
 			</p>
 			<img src="../../images/extension/concept/scope2.png" width="586"
-				height="863" alt="スコープの有効期間" />
+				height="863" alt="Life time of the each scopes" />
 
 			<subsection name="Page scope">
 				<p>
-					Page scopeは，
-					<a href="lifecycle.html#ポストバック_自画面表示">
-						ポストバック (自画面表示)
+					Page scope keeps states while showing same Page in
+					<a href="lifecycle.html#Post back_show self view">
+						Post back (Show self view)
 					</a>
-					や
+					,
 					<a
-						href="lifecycle.html#ポストバック_リダイレクト">
-						ポストバック (リダイレクト)
+						href="lifecycle.html#Post back_Redirect">
+						Post back (Redirect)
 					</a>
-					～
-					<a href="lifecycle.html#リダイレクト表示">
-						リダイレクト表示
-					</a>
-					で同じページを表示している間維持されるスコープです．
+					,
+					<a href="lifecycle.html#Redirect show">
+						Redirect show
+					</a>.
 				</p>
 				<p>
 					Page scopeは，
