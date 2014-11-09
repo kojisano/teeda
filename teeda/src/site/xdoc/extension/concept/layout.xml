@@ -4,66 +4,63 @@
 	"http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Extension - 概念 - レイアウト</title>
+		<title>Extension - Concepts - Layout</title>
 	</properties>
 	<body>
-		<section name="レイアウト">
+		<section name="Layout">
 			<ul>
 				<li>
-					<a href="#概要">概要</a>
+					<a href="#Abstracts">Abstracts</a>
 				</li>
 				<li>
-					<a href="#適用されるレイアウト">適用されるレイアウト</a>
+					<a href="#Applied Layout">Applied Layout</a>
 				</li>
 				<li>
-					<a href="#レイアウトHTML">レイアウトHTML</a>
+					<a href="#LayoutHTML">LayoutHTML</a>
 					<ul>
 						<li>
-							<a href="#ヘッダ">ヘッダ</a>
+							<a href="#Header">Header</a>
 						</li>
 						<li>
-							<a href="#ボディ">ボディ</a>
+							<a href="#Body">Body</a>
 						</li>
 					</ul>
 				</li>
 				<li>
-					<a href="#ページクラス">ページクラス</a>
+					<a href="#Page class">Page class</a>
 				</li>
 			</ul>
 		</section>
 
-		<section name="概要">
+		<section name="Abstracts">
 			<p>
-				レイアウト機能を使うと，アプリケーション全体でレイアウトを共有したり，
-				ヘッダやフッタ，メニューなど，画面の一部を部品化することができます．
+				By using Layout function, it can share Application common Layout, 
+				make parts of page (e.g. Header and footer, menu) as common component.
 			</p>
 			<p>
-				ブラウザからリクエストされたページにレイアウトが適用されると，
-				レンダリング結果の全体的な配置はレイアウトによって決まります．
+				If Teeda applies Layout to the page that is requested from Web browser,
+				last renderring result is defined by Layout.
 			</p>
 			<p>
-				レイアウト中の
+				In the Layout, 
 				<code>&lt;te:includeChildBody&gt;</code>
-				要素がリクエストされたページの
+				Element will be replaced with the 
 				<code>&lt;body&gt;</code>
-				要素の内容に置き換えられます． また，
+				Element of requested Page contents. And,
 				<code>&lt;te:include&gt;</code>
-				要素は
+				Element will be replaced with the <code>&lt;body&gt;</code> Element of the Page that is pointed by
 				<code>te:src</code>
-				属性で指定されたページの
-				<code>&lt;body&gt;</code>
-				要素の内容に置き換えられます．
 			</p>
 			<img src="../../images/extension/concept/layout1.png"
-				width="547" height="303" alt="レイアウトの適用" />
-			<p>上の例のレンダリング結果は次のようになります．</p>
+				width="547" height="303" alt="Apply Layout" />
+			<p>The result of the rendering result of the example above will be </p>
 			<img src="../../images/extension/concept/layout2.png"
-				width="208" height="303" alt="レンダリング結果" />
+				width="208" height="303" alt="Renderring result" />
 		</section>
 
-		<section name="適用されるレイアウト">
+		<section name="Applied Layout">
 			<p>
-				デフォルトのレイアウトHTMLは，
+				デフォルトのLayoutHTMLは，
 				<code>
 					<var>ビュールート</var>
 					/layout/layout.html
@@ -71,9 +68,9 @@
 				になります．
 			</p>
 			<p>
-				デフォルトのレイアウトHTMLを変更するには，
+				デフォルトのLayoutHTMLを変更するには，
 				<code>web.xml</code>
-				のコンテキストパラメータでデフォルトで使用するレイアウトを指定します． パラメータ名は
+				のコンテキストパラメータでデフォルトで使用するLayoutを指定します． パラメータ名は
 				<code>teeda.DEFAULT_LAYOUT_PATH</code>
 				で，値はビュールート (デフォルトは
 				<code>/view</code>
@@ -87,9 +84,9 @@
 </context-param>
 ]]></source>
 			<p>
-				特定のページだけ異なったレイアウトを使うには， デフォルト以外のレイアウトを使いたい画面のページクラスに
+				特定のページだけ異なったLayoutを使うには， デフォルト以外のLayoutを使いたい画面のPage classに
 				<code>getLayout()</code>
-				メソッドを用意して， 戻り値で使用するレイアウトのページクラスまたは
+				メソッドを用意して， 戻り値で使用するLayoutのPage classまたは
 				<a href="page.html#ページ名の命名規約">ページ名</a>
 				を指定します． このメソッドは
 				<code>public</code>
@@ -99,7 +96,7 @@
 				<code>String</code>
 				です．
 			</p>
-			<h5>例：ページクラス</h5>
+			<h5>例：Page class</h5>
 			<source><![CDATA[
 public Class getLayout() {
     return OtherLayoutPage.class;
@@ -107,86 +104,86 @@ public Class getLayout() {
 ]]></source>
 		</section>
 
-		<section name="レイアウトHTML">
-			<subsection name="ヘッダ">
+		<section name="LayoutHTML">
+			<subsection name="Header">
 				<p>
 					レンダリング結果の
 					<code>&lt;head&gt;</code>
-					要素の内容は，レイアウトHTMLの
+					Elementの内容は，LayoutHTMLの
 					<code>&lt;head&gt;</code>
-					要素の内容がベースになります．
+					Elementの内容がベースになります．
 				</p>
 				<p>
 					ただし，
 					<code>&lt;title&gt;</code>
-					要素はリクエストされたページの
+					Elementはリクエストされたページの
 					<code>&lt;title&gt;</code>
-					要素が使われます． また，レイアウトHTMLの
+					Elementが使われます． また，LayoutHTMLの
 					<code>&lt;head&gt;</code>
-					要素にリクエストされたページの次の要素が加えられてレンダリングされます．
+					Elementにリクエストされたページの次のElementが加えられてレンダリングされます．
 				</p>
 				<ul>
 					<li>
 						<code>&lt;link&gt;</code>
-						要素
+						Element
 					</li>
 					<li>
 						<code>&lt;script&gt;</code>
-						要素
+						Element
 					</li>
 					<li>
 						<code>&lt;style&gt;</code>
-						要素
+						Element
 					</li>
 				</ul>
 			</subsection>
 
-			<subsection name="ボディ">
-				<h4>te:includeChildBody要素</h4>
+			<subsection name="Body">
+				<h4>te:includeChildBodyElement</h4>
 				<p>
-					レイアウトHTMLの中の
+					LayoutHTMLの中の
 					<code>&lt;te:layoutChildBody&gt;</code>
-					要素は，リクエストされたページの
+					Elementは，リクエストされたページの
 					<code>&lt;body&gt;</code>
-					要素の内容に置き換えられます．
+					Elementの内容に置き換えられます．
 				</p>
 				<p>
 					<code>&lt;te:layoutChildBody&gt;</code>
-					要素は，レイアウトHTMLの中で厳密に1つだけ記述しなくてはなりません． 複数の
+					Elementは，LayoutHTMLの中で厳密に1つだけ記述しなくてはなりません． 複数の
 					<code>&lt;te:layoutChildBody&gt;</code>
 					を記述することも，省略することも許されません．
 				</p>
 
-				<h4>te:include要素</h4>
+				<h4>te:includeElement</h4>
 				<p>
-					レイアウトHTMLの中の
+					LayoutHTMLの中の
 					<code>&lt;te:include&gt;</code>
-					要素は，
+					Elementは，
 					<code>te:src</code>
 					属性で指定されたページの
 					<code>&lt;body&gt;</code>
-					要素の内容に置き換えられます．
+					Elementの内容に置き換えられます．
 				</p>
 				<p>
 					<code>&lt;te:include&gt;</code>
-					要素はレイアウトHTMLの中にいくつでも記述することができます． また，省略することもできます．
+					ElementはLayoutHTMLの中にいくつでも記述することができます． また，省略することもできます．
 				</p>
 			</subsection>
 		</section>
 
-		<section name="ページクラス">
+		<section name="Page class">
 			<p>
-				レイアウトHTMLや
+				LayoutHTMLや
 				<code>&lt;te:include&gt;</code>
-				要素でインクルードされるHTMLも対応するページクラスを持つことができます．
+				ElementでインクルードされるHTMLも対応するPage classを持つことができます．
 			</p>
 			<p>
-				リクエストされたHTMLに対応するページクラスに，
-				レイアウトやインクルードされるHTMLに対応するページクラスのプロパティを用意すると，
-				それらのページクラスがDIされます．
+				リクエストされたHTMLに対応するPage classに，
+				LayoutやインクルードされるHTMLに対応するPage classのプロパティを用意すると，
+				それらのPage classがDIされます．
 			</p>
 			<img src="../../images/extension/concept/layout3.png"
-				width="321" height="208" alt="レイアウトとDI" />
+				width="321" height="208" alt="LayoutとDI" />
 		</section>
 	</body>
 </document>
